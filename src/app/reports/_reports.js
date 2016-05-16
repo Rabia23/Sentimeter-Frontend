@@ -2,6 +2,9 @@
   angular.module( 'livefeed.reports', [
     'ui.router',
     'livefeed.reports.api',
-    'helper_factories'
+    'livefeed.reports.business_segment_breakdown',
+    'livefeed.reports.overall_rating',
+    'livefeed.reports.opportunities',
+    'livefeed.reports.top_concerns'
   ]);
 })();
