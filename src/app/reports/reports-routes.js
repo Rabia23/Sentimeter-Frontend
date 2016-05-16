@@ -26,6 +26,23 @@
           controller: "ReportsTopConcernsCtrl",
           templateUrl: 'reports/top-concerns/top-concerns.tpl.html'
         },
+        "regional_analysis@reports":{
+          controller: "ReportsRegionalAnalysisCtrl",
+          templateUrl: 'reports/regional-analysis/regional-analysis.tpl.html'
+        },
+        "age_group_analysis@reports":{
+          controller: "ReportsAgeGroupAnalysisCtrl",
+          templateUrl: 'reports/age-group-analysis/age-group-analysis.tpl.html'
+        },
+        "benchmark_map@reports":{
+          controller: "ReportsBenchmarkMapCtrl",
+          templateUrl: 'reports/benchmark-map/benchmark-map.tpl.html'
+        },
+        "recommendation_likeness@reports":{
+          controller: "ReportsRecommendationLikenessCtrl",
+          templateUrl: 'reports/recommendation-likeness/recommendation-likeness.tpl.html'
+        },
+
         "sidebar@reports":{
           templateUrl: 'common/sidebar.tpl.html'
         },
