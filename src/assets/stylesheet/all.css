@@ -2957,13 +2957,14 @@ li.active,
   background: #fff;
   padding: 10px 0;
 }
-.report-section .table-section{
+.report-section > *{
+  display: block;
   overflow: hidden;
   padding: 15px 10px 0;
   border-top: 1px solid #e0e0e0;
 }
-.report-section > .table{margin: 0 0 15px;}
-.report-section .table-section:first-child{
+.report-section .table-section > .table{margin: 0 0 15px;}
+.report-section > *:first-child{
   padding-top: 0;
   border: 0;
 }
