@@ -4,11 +4,9 @@
       <tr>
         <th class="item1"><h5>Business segment breakdown</h5></th>
         <th class="item01"><span class="count">Total count</span></th>
-        <th class="item2">Morning</th>
-        <th class="item3">Afternoon</th>
-        <th class="item4">Evening</th>
-        <th class="item5">Night</th>
-        <th class="item6">Late Night</th>
+        <th class="item2" ng-repeat="segment in segments">
+          {{segment.segment_name}}
+        </th>
       </tr>
     </thead>
     <tbody>

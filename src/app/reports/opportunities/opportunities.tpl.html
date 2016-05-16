@@ -14,64 +14,16 @@
       </tr>
     </thead>
     <tbody>
-      <tr class="highlight quality">
+      <tr class={{data.option_class}} ng-repeat="data in opportunity_data">
         <td class="col1">
-          <strong class="num">01 : </strong>
-          <h5>Quality of Food</h5>
+          <strong class="num">{{data.index}} : </strong>
+          <h5>{{data.name}}</h5>
         </td>
         <td class="col2">
-          <span class="count">50</span>
+          <span class="count">{{data.count}}</span>
         </td>
         <td class="col3">
-          <span class="count">100%</span>
-        </td>
-      </tr>
-      <tr class="highlight staff">
-        <td class="col1">
-          <strong class="num">02 : </strong>
-          <h5>Friendly &amp; Courteous Staff </h5>
-        </td>
-        <td class="col2">
-          <span class="count">40</span>
-        </td>
-        <td class="col3">
-          <span class="count">22.5%</span>
-        </td>
-      </tr>
-      <tr class="highlight clean">
-        <td class="col1">
-          <strong class="num">03 : </strong>
-          <h5>Clean Restaurant</h5>
-        </td>
-        <td class="col2">
-          <span class="count">10</span>
-        </td>
-        <td class="col3">
-          <span class="count">26%</span>
-        </td>
-      </tr>
-      <tr class="highlight promotion">
-        <td class="col1">
-          <strong class="num">04 : </strong>
-          <h5>Special Promotions</h5>
-        </td>
-        <td class="col2">
-          <span class="count">5</span>
-        </td>
-        <td class="col3">
-          <span class="count">75%</span>
-        </td>
-      </tr>
-      <tr class="highlight menu">
-        <td class="col1">
-          <strong class="num">05 : </strong>
-          <h5>Variety in Menu</h5>
-        </td>
-        <td class="col2">
-          <span class="count">15</span>
-        </td>
-        <td class="col3">
-          <span class="count">20%</span>
+          <span class="count">{{data.percentage}}%</span>
         </td>
       </tr>
     </tbody>

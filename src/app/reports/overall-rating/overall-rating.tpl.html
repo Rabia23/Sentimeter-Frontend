@@ -14,48 +14,15 @@
       </tr>
     </thead>
     <tbody>
-      <tr class="highlight dark-green">
+      <tr class= {{data.option_class}} ng-repeat="data in rating_data">
         <td class="col1">
-          <h5>I'm lovin' it</h5>
+          <h5>{{data.name}}</h5>
         </td>
         <td class="col2">
-          <span class="count">50</span>
+          <span class="count">{{data.count}}</span>
         </td>
         <td class="col3">
-          <span class="count">20%</span>
-        </td>
-      </tr>
-      <tr class="highlight green">
-        <td class="col1">
-          <h5>Everything on track</h5>
-        </td>
-        <td class="col2">
-          <span class="count">40</span>
-        </td>
-        <td class="col3">
-          <span class="count">36%</span>
-        </td>
-      </tr>
-      <tr class="highlight red">
-        <td class="col1">
-          <h5>Few concerns</h5>
-        </td>
-        <td class="col2">
-          <span class="count">10</span>
-        </td>
-        <td class="col3">
-          <span class="count">65%</span>
-        </td>
-      </tr>
-      <tr class="highlight dark-red">
-        <td class="col1">
-          <h5>Not happy enough</h5>
-        </td>
-        <td class="col2">
-          <span class="count">20</span>
-        </td>
-        <td class="col3">
-          <span class="count">7%</span>
+          <span class="count">{{data.percentage}}%</span>
         </td>
       </tr>
     </tbody>
