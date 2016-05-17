@@ -14,7 +14,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr class={{data.option_class}} ng-repeat="data in opportunity_data">
+      <tr class={{data.option_class}} ng-repeat="data in opportunity_data" opportunity-option-color data-color="data.color">
         <td class="col1">
           <strong class="num">{{data.index}} : </strong>
           <h5>{{data.name}}</h5>

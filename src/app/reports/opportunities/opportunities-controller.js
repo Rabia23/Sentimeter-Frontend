@@ -1,7 +1,7 @@
 (function() {
   angular.module('livefeed.reports.opportunities')
 
-  .controller( 'ReportsOpportunitiesCtrl', function( $scope, $rootScope, OpportunitiesFactory) {
+  .controller( 'ReportsOpportunitiesCtrl', function( $scope, $rootScope) {
     var vm = this;
     vm.opportunities = opportunities;
 
@@ -13,7 +13,7 @@
           name: data.option__text,
           count: data.count,
           percentage: data.count === 0 ? 0 : Math.round((data.count / $scope.strength.feedback_count) * 100),
-          option_class: OpportunitiesFactory.OpportunitiesOptionClass[data.option__text]
+          color: data.option__color_code
         };
       });
     }

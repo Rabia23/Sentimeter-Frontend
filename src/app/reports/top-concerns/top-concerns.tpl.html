@@ -8,122 +8,15 @@
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <td>
+      <tr ng-repeat="data in concerns_splice_data">
+        <td ng-repeat="dat in data">
           <table class="table">
             <tr class="highlight fries">
               <td class="col1">
-                <strong class="num">01 : </strong>
-                <h5>Fries</h5>
+                <strong class="num">{{dat.index}} : </strong>
+                <h5>{{dat.name}}</h5>
               </td>
-              <td class="col2"><span class="count">50</span> Mentions</td>
-            </tr>
-          </table>
-        </td>
-        <td>
-          <table class="table">
-            <tr class="highlight bun">
-              <td class="col1">
-                <strong class="num">02 : </strong>
-                <h5>Bun</h5>
-              </td>
-              <td class="col2"><span class="count">40</span> Mentions</td>
-            </tr>
-          </table>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <table class="table">
-            <tr class="highlight wifi">
-              <td class="col1">
-                <strong class="num">03 : </strong>
-                <h5>Wifi</h5>
-              </td>
-              <td class="col2"><span class="count">10</span> Mentions</td>
-            </tr>
-          </table>
-        </td>
-        <td>
-          <table class="table">
-            <tr class="highlight price">
-              <td class="col1">
-                <strong class="num">04 : </strong>
-                <h5>Price</h5>
-              </td>
-              <td class="col2"><span class="count">8</span> Mentions</td>
-            </tr>
-          </table>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <table class="table">
-            <tr class="highlight flies">
-              <td class="col1">
-                <strong class="num">05 : </strong>
-                <h5>Flies</h5>
-              </td>
-              <td class="col2"><span class="count">77</span> Mentions</td>
-            </tr>
-          </table>
-        </td>
-        <td>
-          <table class="table">
-            <tr class="highlight fries">
-              <td class="col1">
-                <strong class="num">06 : </strong>
-                <h5>Fries</h5>
-              </td>
-              <td class="col2"><span class="count">67</span> Mentions</td>
-            </tr>
-          </table>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <table class="table">
-            <tr class="highlight bun">
-              <td class="col1">
-                <strong class="num">07 : </strong>
-                <h5>Bun</h5>
-              </td>
-              <td class="col2"><span class="count">19</span> Mentions</td>
-            </tr>
-          </table>
-        </td>
-        <td>
-          <table class="table">
-            <tr class="highlight wifi">
-              <td class="col1">
-                <strong class="num">08 : </strong>
-                <h5>Wifi</h5>
-              </td>
-              <td class="col2"><span class="count">26</span> Mentions</td>
-            </tr>
-          </table>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <table class="table">
-            <tr class="highlight price">
-              <td class="col1">
-                <strong class="num">09 : </strong>
-                <h5>Price</h5>
-              </td>
-              <td class="col2"><span class="count">83</span> Mentions</td>
-            </tr>
-          </table>
-        </td>
-        <td>
-          <table class="table">
-            <tr class="highlight flies">
-              <td class="col1">
-                <strong class="num">10 : </strong>
-                <h5>Flies</h5>
-              </td>
-              <td class="col2"><span class="count">99</span> Mentions</td>
+              <td class="col2"><span class="count">{{dat.count}}</span> Mentions</td>
             </tr>
           </table>
         </td>
