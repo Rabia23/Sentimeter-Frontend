@@ -3120,6 +3120,7 @@ li.active,
 .report-section .wider > tbody > tr > td{
   padding: 0;
   border: 0;
+  width: 50%;
 }
 .report-section .wider .col1{width: 60%;}
 .report-section .wider .col2{width: 40%;}
@@ -3243,6 +3244,7 @@ li.active,
   display: inline-block;
   vertical-align: middle;
   margin: 0 4px 2px 0;
+  background: #999;
 }
 .report-section .detail-table .borders-row .item-box2{border-bottom-color: #cb1e24;}
 .report-section .detail-table .borders-row .item-box3{border-bottom-color: #01c211;}
@@ -3264,6 +3266,9 @@ li.active,
 .report-section .detail-table .items .services .bullet{background: #ffd200;}
 .report-section .detail-table .items .cleanliness .bullet{background: #1f9aec;}
 .report-section .detail-table .items .quality .bullet{background: #cb1e24;}
+.report-section .detail-table .borders-row .item-box5,
+.report-section .detail-table .borders-row .item-box10,
+.report-section .detail-table .borders-row .item-box14{border-bottom-color: #999;}
 .report-section .benchmark td,
 .report-section .benchmark th{
   padding: 13px 2px;
