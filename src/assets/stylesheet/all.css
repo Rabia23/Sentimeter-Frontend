@@ -3071,6 +3071,9 @@ li.active,
   vertical-align: middle;
 }
 .report-section td:first-child{border-left: 0;}
+.report-section .table.wider td:first-child{border-right: 1px solid #e0e0e0;}
+.promotions.loading .report-section{display: none;}
+.DTTT_Print #wrapper #page-wrapper:before{background: #fff;}
 .report-section td.table-content{
   padding: 0 0 0 2.2%;
   border: 0;
