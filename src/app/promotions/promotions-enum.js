@@ -1,7 +1,10 @@
 (function() {
-  angular.module( 'livefeed.promotions')
+  angular.module( 'livefeed.promotions' )
 
-  .factory('PromotionsChartTypeEnum', [function() {
+  .factory( 'PromotionsChartTypeEnum', [ PromotionsChartTypeEnum ]);
+
+
+  function PromotionsChartTypeEnum() {
 
     var chart_type = {
       "Bar Chart": 5,
@@ -18,6 +21,6 @@
       }
     };
 
-  }]);
+  }
 
 })();

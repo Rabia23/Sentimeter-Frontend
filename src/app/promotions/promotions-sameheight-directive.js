@@ -1,7 +1,9 @@
 (function() {
   angular.module('livefeed.promotions')
 
-  .directive('promotionSameHeight', function($timeout) {
+  .directive('promotionSameHeight', promotionSameHeight );
+
+  function promotionSameHeight( $timeout ) {
     return {
       restrict: 'A',
       scope: {
@@ -15,5 +17,5 @@
         });
       }
     };
-  });
+  }
 })();

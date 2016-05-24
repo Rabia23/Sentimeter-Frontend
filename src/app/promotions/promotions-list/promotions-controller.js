@@ -2,7 +2,9 @@
   angular.module( 'livefeed.promotions')
 
 
-  .controller( 'PromotionsCtrl', function PromotionsCtrl( $scope, $state, $rootScope, flashService, PromotionsApi) {
+  .controller( 'PromotionsCtrl', PromotionsCtrl );
+
+  function PromotionsCtrl( $scope, $state, $rootScope, flashService, PromotionsApi) {
     
     $scope.show_loading = true;
     $rootScope.page_heading = "Promotions";
@@ -21,6 +23,6 @@
     $scope.detail = function(promotion_id){
       $state.go("promotions_detail", {promotionId: promotion_id});
     };
-  });
+  }
 
 })();

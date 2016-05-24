@@ -1,7 +1,9 @@
 (function() {
   angular.module( 'livefeed.error_500')
 
-  .config(function config( $stateProvider ) {
+  .config( config );
+
+  function config( $stateProvider ) {
     $stateProvider
     .state( 'error_500', {
       url: '/500',
@@ -12,5 +14,5 @@
       },
       authenticate: false
     });
-  });
+  }
 })();
