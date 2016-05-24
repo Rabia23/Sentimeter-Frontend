@@ -1,6 +1,8 @@
 (function() {
   angular.module('livefeed.questionnaire')
-  .directive('questionnaireQuestionBarBackground', function() {
+  .directive('questionnaireQuestionBarBackground', questionnaireQuestionBarBackground );
+
+  function questionnaireQuestionBarBackground() {
     return {
       restrict: 'A',
       scope: {
@@ -17,5 +19,5 @@
         });
       }
     };
-  });
+  }
 })();

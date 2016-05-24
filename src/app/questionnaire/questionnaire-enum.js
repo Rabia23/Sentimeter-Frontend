@@ -1,7 +1,9 @@
 (function() {
   angular.module( 'livefeed.questionnaire')
 
-  .factory('QuestionnaireChartTypeEnum', [function() {
+  .factory('QuestionnaireChartTypeEnum', [ QuestionnaireChartTypeEnum ]);
+
+  function QuestionnaireChartTypeEnum() {
 
     var chart_type = {
       "Bar Chart": 11,
@@ -18,6 +20,6 @@
       }
     };
 
-  }]);
+  }
 
 })();

@@ -1,7 +1,10 @@
 (function() {
   angular.module('livefeed.questionnaire')
 
-  .controller( 'QuestionnaireDetailCtrl', function QuestionnaireDetailCtrl( $scope, $rootScope, QuestionnaireChartTypeEnum, flashService, $stateParams, QuestionnaireApi) {
+  .controller( 'QuestionnaireDetailCtrl', QuestionnaireDetailCtrl );
+
+
+  function QuestionnaireDetailCtrl( $scope, $rootScope, QuestionnaireChartTypeEnum, flashService, $stateParams, QuestionnaireApi) {
 
     var inc = 1;
     $scope.all_zero = true;
@@ -16,14 +19,23 @@
     var start_date = null;
     var end_date = null;
 
+    var vm = this;
+
+    vm.resetDates = resetDates;
+    vm.showQuestionnaireData = showQuestionnaireData;
+    vm.getBarChartData = getBarChartData;
+    vm.getPieChartData = getPieChartData;
+
+
+    vm.resetDates();
+    vm.showQuestionnaireData();
+
     function resetDates(){
       $scope.date = {
         startDate: moment().subtract(1, "days"),
         endDate: moment()
       };
     }
-
-    resetDates();
 
     $scope.datePickerOption = {
       eventHandlers: {
@@ -32,11 +44,13 @@
           $scope.all_zero = true;
           start_date = ev.model.startDate._i;
           end_date =  ev.model.endDate._i;
-          showQuestionnaireData();
+          vm.showQuestionnaireData();
         }
       },
       opens: "left"
     }; 
+    
+
     function showQuestionnaireData() {
 
       QuestionnaireApi.questionnaire_detail(questionnaireId, start_date, end_date).$promise.then(function (data) {
@@ -51,11 +65,11 @@
               $scope.all_zero = false;
             }
             if (question.type == QuestionnaireChartTypeEnum.get_bar_chart_value()) {
-              var question_bar_chart = getBarChartData(question.feedbacks, question.total_count);
+              var question_bar_chart = vm.getBarChartData(question.feedbacks, question.total_count);
               question["question_bar_chart"] = question_bar_chart;
             }
             else if (question.type == QuestionnaireChartTypeEnum.get_pie_chart_value()) {
-              var question_pie_chart = getPieChartData(question.feedbacks);
+              var question_pie_chart = vm.getPieChartData(question.feedbacks);
               question["question_pie_chart"] = ["piechart-" + inc, question_pie_chart];
               inc = inc + 1;
             }
@@ -89,7 +103,7 @@
       return pie_chart_data;
     }
 
-    showQuestionnaireData();
-  });
+    
+  }
 
 })();

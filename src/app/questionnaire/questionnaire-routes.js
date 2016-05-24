@@ -1,7 +1,9 @@
 (function() {
   angular.module( 'livefeed.questionnaire')
 
-  .config(function config( $stateProvider ) {
+  .config( config );
+
+  function config( $stateProvider ) {
     $stateProvider
     .state( 'questionnaire', {
       url: '/questionnaire',
@@ -49,6 +51,6 @@
       authenticate: true
     });
 
-  });
+  }
 
 })();

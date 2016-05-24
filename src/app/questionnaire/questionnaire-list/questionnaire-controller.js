@@ -1,7 +1,9 @@
 (function() {
   angular.module('livefeed.questionnaire')
 
-  .controller( 'QuestionnaireCtrl', function QuestionnaireCtrl( $scope, $state, QuestionnaireApi, flashService, $rootScope) {
+  .controller( 'QuestionnaireCtrl', QuestionnaireCtrl );
+
+  function QuestionnaireCtrl( $scope, $state, QuestionnaireApi, flashService, $rootScope) {
 
     $scope.show_loading = true;
     $rootScope.page_heading = "Questionnaires List";
@@ -18,6 +20,7 @@
     $scope.detail = function(question_id){
       $state.go("questionnaire_detail", {questionnaireId: question_id});
     };
-  });
+  
+  }
 
 })();
