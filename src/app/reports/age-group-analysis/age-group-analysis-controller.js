@@ -7,7 +7,7 @@
 
     function age_group_analysis(){
       $scope.customer_data = [];
-      $scope.customer_data =  _.map($scope.customer_analysis.customer_analysis, function(data) {
+      $scope.customer_data =  _.map($scope.age_group_analysis.customer_analysis, function(data) {
         var obj = {"label": data.age_group_label, "total_count": data.count};
         _.each(data.gender_division, function(value){
           if(value.gender_group_label === "MALE"){

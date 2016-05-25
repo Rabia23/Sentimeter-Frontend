@@ -32,17 +32,18 @@
 
     function generate_report(start_date, end_date){
       ReportsApi.report(start_date, end_date).$promise.then(function(data){
+        console.log("report");
+        console.log(data);
         $scope.show_loading = false;
         if(data.success){
           $scope.complaint_view = data.response.complaint_view;
           $scope.concerns = data.response.concerns;
-          $scope.customer_analysis = data.response.customer_analysis;
-          $scope.overall_feedback = data.response.overall_feedback;
+          $scope.age_group_analysis = data.response.age_group_analysis;
           $scope.overall_rating = data.response.overall_rating;
           $scope.recommendation_analysis = data.response.recommendation_analysis;
           $scope.segmentation_rating = data.response.segmentation_rating;
-          $scope.strength = data.response.strength;
-          $scope.top_rankings = data.response.top_rankings;
+          $scope.opportunity_analysis = data.response.opportunity_analysis;
+          $scope.patch_analysis = data.response.patch_analysis;
 
           $rootScope.$broadcast('report-data-received');
         }

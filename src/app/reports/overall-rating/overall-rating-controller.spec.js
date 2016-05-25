@@ -8,7 +8,7 @@ describe('ReportOverallRatingCtrl', function(){
 
     $rootScope = _$rootScope_;
     controller = $controller('ReportsOverallRatingCtrl', { $scope: $rootScope });
-    $rootScope.overall_feedback = {
+    $rootScope.overall_rating = {
       "feedback_count": 4,
       "feedbacks": [
         {

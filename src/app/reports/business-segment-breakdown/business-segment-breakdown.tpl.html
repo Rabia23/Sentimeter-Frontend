@@ -9,174 +9,27 @@
         </th>
       </tr>
     </thead>
-    <tbody>
-      <tr class="highlight yellow">
-        <td class="item1"><h5>Services</h5></td>
-        <td class="item01"><span class="count">50</span></td>
-        <td class="item2">03</td>
-        <td class="item3">03</td>
-        <td class="item4">03</td>
-        <td class="item5">03</td>
-        <td class="item6">03</td>
+    <tbody ng-repeat="data in qsc_segments">
+      <tr class="highlight {{data.option_class}}">
+        <td class="item1"><h5>{{data.option_name}}</h5></td>
+        <td class="item01"><span class="count">{{data.total_count}}</span></td>
+        <td class="item2">{{data.Morning}}</td>
+        <td class="item3">{{data.Afternoon}}</td>
+        <td class="item4">{{data.Evening}}</td>
+        <td class="item5">{{data.Night}}</td>
+        <td class="item6">{{data["Late Night"]}}</td>
       </tr>
       <tr>
         <td colspan="7" class="table-content">
-          <table class="table">
-            <tr>
-              <td class="item1">MISSING ORDER</td>
-              <td class="item01"><span class="count">50</span></td>
-              <td class="item2">03</td>
-              <td class="item3">03</td>
-              <td class="item4">03</td>
-              <td class="item5">03</td>
-              <td class="item6">03</td>
-            </tr>
-            <tr>
-              <td class="item1">SPEED OF SERVICE</td>
-              <td class="item01"><span class="count">50</span></td>
-              <td class="item2">05</td>
-              <td class="item3">05</td>
-              <td class="item4 hilighted">05</td>
-              <td class="item5">05</td>
-              <td class="item6">05</td>
-            </tr>
-            <tr>
-              <td class="item1">WRONG ORDER</td>
-              <td class="item01"><span class="count">50</span></td>
-              <td class="item2">00</td>
-              <td class="item3">00</td>
-              <td class="item4">00</td>
-              <td class="item5">00</td>
-              <td class="item6">00</td>
-            </tr>
-            <tr>
-              <td class="item1">EMPLOYEE COURTESY</td>
-              <td class="item01"><span class="count">50</span></td>
-              <td class="item2">01</td>
-              <td class="item3">01</td>
-              <td class="item4">01</td>
-              <td class="item5 hilighted">01</td>
-              <td class="item6">01</td>
-            </tr>
-            <tr>
-              <td class="item1">EMPLOYEE ATTENTIVENESS</td>
-              <td class="item01"><span class="count">50</span></td>
-              <td class="item2">02</td>
-              <td class="item3">02</td>
-              <td class="item4">02</td>
-              <td class="item5">02</td>
-              <td class="item6">02</td>
-            </tr>
-          </table>
-        </td>
-      </tr>
-      <tr class="highlight blue">
-        <td class="item1"><h5>cleanliness</h5></td>
-        <td class="item01"><span class="count">40</span></td>
-        <td class="item2">03</td>
-        <td class="item3">03</td>
-        <td class="item4">03</td>
-        <td class="item5">03</td>
-        <td class="item6">03</td>
-      </tr>
-      <tr>
-        <td colspan="7" class="table-content">
-          <table class="table">
-            <tr>
-              <td class="item1">CAR PARKING</td>
-              <td class="item01"><span class="count">50</span></td>
-              <td class="item2">03</td>
-              <td class="item3">03</td>
-              <td class="item4">03</td>
-              <td class="item5">03</td>
-              <td class="item6">03</td>
-            </tr>
-            <tr>
-              <td class="item1">MUSIC</td>
-              <td class="item01"><span class="count">50</span></td>
-              <td class="item2">05</td>
-              <td class="item3">05</td>
-              <td class="item4">05</td>
-              <td class="item5">05</td>
-              <td class="item6">05</td>
-            </tr>
-            <tr>
-              <td class="item1">TABLE/CHAIRS</td>
-              <td class="item01"><span class="count">50</span></td>
-              <td class="item2">00</td>
-              <td class="item3">00</td>
-              <td class="item4">00</td>
-              <td class="item5">00</td>
-              <td class="item6">00</td>
-            </tr>
-            <tr>
-              <td class="item1">LOBBY</td>
-              <td class="item01"><span class="count">50</span></td>
-              <td class="item2">01</td>
-              <td class="item3">01</td>
-              <td class="item4">01</td>
-              <td class="item5">01</td>
-              <td class="item6">01</td>
-            </tr>
-            <tr>
-              <td class="item1">LOBBY TEMPERATURE</td>
-              <td class="item01"><span class="count">50</span></td>
-              <td class="item2">02</td>
-              <td class="item3">02</td>
-              <td class="item4">02</td>
-              <td class="item5">02</td>
-              <td class="item6">02</td>
-            </tr>
-            <tr>
-              <td class="item1">EMPLOYEES</td>
-              <td class="item01">&nbsp;</td>
-              <td class="item2">&nbsp;</td>
-              <td class="item3">&nbsp;</td>
-              <td class="item4">&nbsp;</td>
-              <td class="item5">&nbsp;</td>
-              <td class="item6">&nbsp;</td>
-            </tr>
-          </table>
-        </td>
-      </tr>
-      <tr class="highlight red">
-        <td class="item1"><h5>quality</h5></td>
-        <td class="item01"><span class="count">50</span></td>
-        <td class="item2">03</td>
-        <td class="item3">03</td>
-        <td class="item4">03</td>
-        <td class="item5">03</td>
-        <td class="item6">03</td>
-      </tr>
-      <tr>
-        <td colspan="7" class="table-content">
-          <table class="table">
-            <tr>
-              <td class="item1">TASTE</td>
-              <td class="item01"><span class="count">50</span></td>
-              <td class="item2">03</td>
-              <td class="item3">03</td>
-              <td class="item4">03</td>
-              <td class="item5">03</td>
-              <td class="item6">03</td>
-            </tr>
-            <tr>
-              <td class="item1">FRIES</td>
-              <td class="item01"><span class="count">50</span></td>
-              <td class="item2">05</td>
-              <td class="item3">05</td>
-              <td class="item4">05</td>
-              <td class="item5">05</td>
-              <td class="item6">05</td>
-            </tr>
-            <tr>
-              <td class="item1">NOT FRESH</td>
-              <td class="item01"><span class="count">50</span></td>
-              <td class="item2">00</td>
-              <td class="item3">00</td>
-              <td class="item4">00</td>
-              <td class="item5">00</td>
-              <td class="item6">00</td>
+          <table class="table" >
+            <tr ng-repeat="item in data.sub_options_labels">
+              <td class="item1">{{item.sub_option}}</td>
+              <td class="item01"><span class="count">{{item.total_count}}</span></td>
+              <td class="item2">{{item.Morning}}</td>
+              <td class="item3">{{item.Afternoon}}</td>
+              <td class="item4">{{item.Evening}}</td>
+              <td class="item5">{{item.Night}}</td>
+              <td class="item6">{{item["Late Night"]}}</td>
             </tr>
           </table>
         </td>

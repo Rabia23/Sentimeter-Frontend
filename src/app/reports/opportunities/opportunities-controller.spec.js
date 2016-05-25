@@ -8,7 +8,7 @@ describe('ReportOpportunitiesCtrl', function(){
 
     $rootScope = _$rootScope_;
     controller = $controller('ReportsOpportunitiesCtrl', { $scope: $rootScope });
-    $rootScope.strength = {
+    $rootScope.opportunity_analysis = {
       "feedback_count": 99,
       "feedbacks": [
         {

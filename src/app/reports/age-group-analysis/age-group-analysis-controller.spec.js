@@ -8,7 +8,7 @@ describe('ReportAgeGroupAnalysisCtrl', function(){
 
     $rootScope = _$rootScope_;
     controller = $controller('ReportsAgeGroupAnalysisCtrl', { $scope: $rootScope });
-    $rootScope.customer_analysis = {
+    $rootScope.age_group_analysis = {
       "feedback_count": 10,
       "customer_analysis": [
         {
