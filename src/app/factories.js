@@ -20,6 +20,9 @@ angular.module( 'factories', [
   Filters.prototype.Cities = function(region_id){
     return this.service.Cities({region_id: region_id});
   };
+  Filters.prototype.Branches = function(city_id, region_id){
+    return this.service.Branches({city: city_id, region: region_id});
+  };
   Filters.prototype.specific_branch = function(city_id, region_id){
     return this.service.specific_branch({city: city_id, region: region_id});
   };
