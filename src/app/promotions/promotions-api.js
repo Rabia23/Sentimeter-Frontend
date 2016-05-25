@@ -6,7 +6,7 @@
 
   .factory('PromotionsApi', ['$resource','apiLinks', Promotions ]);
 
-   function Promotions ( $resource, apiLinks ) {
+  function Promotions ( $resource, apiLinks ) {
 
     function PromotionsApi() {
       this.service = $resource(apiLinks.link.api, {},
