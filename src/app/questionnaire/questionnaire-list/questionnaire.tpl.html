@@ -1,8 +1,8 @@
 <div id="wrapper">
   <toaster-container toaster-options="{'close-button': true}"></toaster-container>
-  <ui-view name="sidebar"></ui-view>
+  <div sidebar></div>
   <div id="page-wrapper" class="gray-bg">
-    <ui-view name="header"></ui-view>
+    <div header></div>
     <div class="wrapper wrapper-content animated fadeInRight">
       <div class="row questionnaire" ng-class="{'loading': show_loading}">
         <div class="col-lg-12">
@@ -24,5 +24,5 @@
       </div>
     </div>
   </div>
-  <ui-view name="footer"></ui-view>
+  <div footer></div>
 </div>

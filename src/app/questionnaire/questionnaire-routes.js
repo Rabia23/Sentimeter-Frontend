@@ -9,17 +9,6 @@
         "": {
           controller: 'QuestionnaireCtrl',
           templateUrl: 'questionnaire/questionnaire-list/questionnaire.tpl.html'
-        },
-        "sidebar@questionnaire":{
-          templateUrl: 'common/sidebar.tpl.html'
-        },
-
-        "header@questionnaire":{
-          templateUrl: 'common/header.tpl.html'
-        },
-
-        "footer@questionnaire":{
-          templateUrl: 'common/footer.tpl.html'
         }
 
       },
@@ -32,17 +21,6 @@
         "": {
           controller: 'QuestionnaireDetailCtrl',
           templateUrl: 'questionnaire/questionnaire-detail/questionnaire-detail.tpl.html'
-        },
-        "sidebar@questionnaire_detail":{
-          templateUrl: 'common/sidebar.tpl.html'
-        },
-
-        "header@questionnaire_detail":{
-          templateUrl: 'common/header.tpl.html'
-        },
-
-        "footer@questionnaire_detail":{
-          templateUrl: 'common/footer.tpl.html'
         }
 
       },
