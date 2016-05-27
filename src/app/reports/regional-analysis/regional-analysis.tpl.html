@@ -12,27 +12,23 @@
         <td>&nbsp;</td>
         <td colspan="4">
           <ul class="items">
-            <li class="unprocessed"><span class="bullet"></span>Unprocessed</li>
-            <li class="recovered"><span class="bullet"></span>Recovered</li>
-            <li class="unrecoverable"><span class="bullet"></span>Unrecoverable</li>
-            <li class="total"><span class="bullet"></span>Total</li>
+            <li class="{{label.class}}" ng-repeat="label in labels[0].complaints"><span class="bullet"></span>
+              {{label.name}}
+            </li>
           </ul>
         </td>
         <td colspan="5">
           <ul class="items">
-            <li class="item01"><span class="bullet"></span>I'm Lovin It</li>
-            <li class="item02"><span class="bullet"></span>Everything On Track</li>
-            <li class="item03"><span class="bullet"></span>Few Concerns</li>
-            <li class="item04"><span class="bullet"></span>Not Happy Enough</li>
-            <li class="total"><span class="bullet"></span>Total</li>
+            <li class="{{label.class}}" ng-repeat="label in labels[0].ratings"><span class="bullet"></span>
+              {{label.name}}
+            </li>
           </ul>
         </td>
         <td colspan="4">
           <ul class="items">
-            <li class="services"><span class="bullet"></span>Services</li>
-            <li class="cleanliness"><span class="bullet"></span>Cleanliness</li>
-            <li class="quality"><span class="bullet"></span>Quality</li>
-            <li class="total"><span class="bullet"></span>Total</li>
+            <li class="{{label.class}}" ng-repeat="label in labels[0].qsc"><span class="bullet"></span>
+              {{label.name}}
+            </li>
           </ul>
         </td>
       </tr>
@@ -54,69 +50,22 @@
         <td class="item-box13">&nbsp;</td>
         <td class="item-box14">&nbsp;</td>
       </tr>
-      <tr class="heading-row">
-        <td class="item-box1"><h3>Khurram</h3></td>
-        <td class="item-box2">10</td>
-        <td class="item-box3">2</td>
-        <td class="item-box4">6</td>
-        <td class="item-box5"><span class="count">18</span></td>
-        <td class="item-box6">7</td>
-        <td class="item-box7">1</td>
-        <td class="item-box8">9</td>
-        <td class="item-box9">3</td>
-        <td class="item-box10"><span class="count">20</span></td>
-        <td class="item-box11">5</td>
-        <td class="item-box12">4</td>
-        <td class="item-box13">8</td>
-        <td class="item-box14"><span class="count">17</span></td>
-      </tr>
-      <tr class="subheading-row">
-        <td class="item-box1"><h5>Lahore</h5></td>
-        <td class="item-box2">10</td>
-        <td class="item-box3">2</td>
-        <td class="item-box4">6</td>
-        <td class="item-box5"><span class="count">18</span></td>
-        <td class="item-box6">7</td>
-        <td class="item-box7">1</td>
-        <td class="item-box8">9</td>
-        <td class="item-box9">3</td>
-        <td class="item-box10"><span class="count">20</span></td>
-        <td class="item-box11">5</td>
-        <td class="item-box12">4</td>
-        <td class="item-box13">8</td>
-        <td class="item-box14"><span class="count">17</span></td>
-      </tr>
-      <tr>
-        <td class="item-box1"><h6>DHA</h6></td>
-        <td class="item-box2">10</td>
-        <td class="item-box3">2</td>
-        <td class="item-box4">6</td>
-        <td class="item-box5"><span class="count">18</span></td>
-        <td class="item-box6">7</td>
-        <td class="item-box7">1</td>
-        <td class="item-box8">9</td>
-        <td class="item-box9">3</td>
-        <td class="item-box10"><span class="count">20</span></td>
-        <td class="item-box11">5</td>
-        <td class="item-box12">4</td>
-        <td class="item-box13">8</td>
-        <td class="item-box14"><span class="count">17</span></td>
-      </tr>
-      <tr>
-        <td class="item-box1"><h6>Gulberg</h6></td>
-        <td class="item-box2">10</td>
-        <td class="item-box3">2</td>
-        <td class="item-box4">6</td>
-        <td class="item-box5"><span class="count">18</span></td>
-        <td class="item-box6">7</td>
-        <td class="item-box7">1</td>
-        <td class="item-box8">9</td>
-        <td class="item-box9">3</td>
-        <td class="item-box10"><span class="count">20</span></td>
-        <td class="item-box11">5</td>
-        <td class="item-box12">4</td>
-        <td class="item-box13">8</td>
-        <td class="item-box14"><span class="count">17</span></td>
+      <tr class="heading-row" ng-repeat="data in patches">
+        <td class="item-box1">
+          <h3>{{data.region_name}}</h3>
+        </td>
+        <td class="item-box2" ng-repeat="dat in data.complaint_analysis">
+          {{dat.count}}
+        </td>
+        <td class="item-box5"><span class="count">{{data.complaints_total_count}}</span></td>
+        <td class="item-box6" ng-repeat="dat in data.rating_analysis">
+          {{dat.count}}
+        </td>
+        <td class="item-box10"><span class="count">{{data.ratings_total_count}}</span></td>
+        <td class="item-box11" ng-repeat="dat in data.qsc_analysis">
+          {{dat.count}}
+        </td>
+        <td class="item-box14"><span class="count">{{data.qsc_total_count}}</span></td>
       </tr>
     </tbody>
   </table>

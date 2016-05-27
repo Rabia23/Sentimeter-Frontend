@@ -3263,10 +3263,10 @@ li.active,
 .report-section .detail-table .items .item02 .bullet{background: #01ad0f;}
 .report-section .detail-table .items .item03 .bullet{background: #e73a3a;}
 .report-section .detail-table .items .item04 .bullet{background: #ac1a1a;}
-.report-section .detail-table .borders-row .item-box11{border-bottom-color: #ffd200;}
-.report-section .detail-table .borders-row .item-box12{border-bottom-color: #1f9aec;}
-.report-section .detail-table .borders-row .item-box13{border-bottom-color: #cb1e24;}
-.report-section .detail-table .items .services .bullet{background: #ffd200;}
+.report-section .detail-table .borders-row .item-box11{border-bottom-color: #cb1e24;}
+.report-section .detail-table .borders-row .item-box12{border-bottom-color: #ffd200;}
+.report-section .detail-table .borders-row .item-box13{border-bottom-color: #1f9aec;}
+.report-section .detail-table .items .service .bullet{background: #ffd200;}
 .report-section .detail-table .items .cleanliness .bullet{background: #1f9aec;}
 .report-section .detail-table .items .quality .bullet{background: #cb1e24;}
 .report-section .detail-table .borders-row .item-box5,

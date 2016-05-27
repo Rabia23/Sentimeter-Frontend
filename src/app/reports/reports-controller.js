@@ -32,8 +32,6 @@
 
     function generate_report(start_date, end_date){
       ReportsApi.report(start_date, end_date).$promise.then(function(data){
-        console.log("report");
-        console.log(data);
         $scope.show_loading = false;
         if(data.success){
           $scope.complaint_view = data.response.complaint_view;

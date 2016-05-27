@@ -41,18 +41,6 @@
         "recommendation_likeness@reports":{
           controller: "ReportsRecommendationLikenessCtrl",
           templateUrl: 'reports/recommendation-likeness/recommendation-likeness.tpl.html'
-        },
-
-        "sidebar@reports":{
-          templateUrl: 'common/sidebar.tpl.html'
-        },
-
-        "header@reports":{
-          templateUrl: 'common/header.tpl.html'
-        },
-
-        "footer@reports":{
-          templateUrl: 'common/footer.tpl.html'
         }
 
       },

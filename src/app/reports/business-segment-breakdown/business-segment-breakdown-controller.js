@@ -52,7 +52,6 @@
           });
         }
       });
-      console.log($scope.qsc_segments);
     }
     $rootScope.$on('report-data-received', function (event, data) {
       vm.business_segment_breakdown();
