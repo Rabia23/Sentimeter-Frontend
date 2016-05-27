@@ -11,15 +11,13 @@
     <tbody>
       <tr class="hidden-print">
         <td colspan="3">
-          <div class="progress-holder">
+          <div class="progress-holder" likeness-progress-bar-background data-data="promoter_score_array">
             <uib-progress>
-              <uib-bar ng-repeat="data in promoter_score_array track by $index" value="data.percentage" type="{{data.type}}">
-                <span>{{data.percentage}}%</span>
-              </uib-bar>
+              <uib-bar ng-repeat="data in promoter_score_array track by $index" value="data.percentage" type="{{data.type}}" data-color="{{data.color}}"></uib-bar>
             </uib-progress>
             <ul class="list">
               <li ng-repeat="data in promoter_score_array">
-                <span class="bullet"></span> {{data.percentage}}% {{data.name}}
+                <span class="bullet" label-color data-color="data.color"></span> {{data.percentage}}% {{data.name}}
               </li>
             </ul>
           </div>
@@ -29,9 +27,9 @@
         <th>
           <div class="breakdown-holder">
             <h5>Response BreakDown</h5>
-            <div class="progress hidden-print">
+            <div class="progress hidden-print" likeness-progress-bar-background data-data="progress_bars">
               <uib-progress>
-                <uib-bar ng-repeat="bar in progress_bars track by $index" value="bar.percentage" type="{{bar.type}}">
+                <uib-bar ng-repeat="bar in progress_bars track by $index" value="bar.percentage" data-color="{{bar.color}}">
                   <span>{{bar.percentage}}%</span>
                 </uib-bar>
               </uib-progress>
