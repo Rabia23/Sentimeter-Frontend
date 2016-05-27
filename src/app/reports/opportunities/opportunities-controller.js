@@ -1,7 +1,9 @@
 (function() {
   angular.module('livefeed.reports.opportunities')
 
-  .controller( 'ReportsOpportunitiesCtrl', function( $scope, $rootScope) {
+  .controller( 'ReportsOpportunitiesCtrl', ReportsOpportunitiesCtrl);
+
+  function ReportsOpportunitiesCtrl( $scope, $rootScope) {
     var vm = this;
     vm.opportunities = opportunities;
 
@@ -22,6 +24,6 @@
       vm.opportunities();
     });
 
-  });
+  }
 
 })();

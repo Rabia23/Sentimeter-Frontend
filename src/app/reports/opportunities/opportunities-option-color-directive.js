@@ -1,7 +1,9 @@
 (function() {
   angular.module('livefeed.reports.opportunities')
 
-  .directive('opportunityOptionColor', function() {
+  .directive('opportunityOptionColor', opportunityOptionColor);
+
+  function opportunityOptionColor() {
     return {
       restrict: 'A',
       scope: {
@@ -15,6 +17,5 @@
         });
       }
     };
-  });
-
+  }
 })();

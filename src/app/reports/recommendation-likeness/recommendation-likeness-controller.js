@@ -1,7 +1,9 @@
 (function() {
   angular.module('livefeed.reports.recommendation_likeness')
 
-  .controller( 'ReportsRecommendationLikenessCtrl', function( $scope, $rootScope) {
+  .controller( 'ReportsRecommendationLikenessCtrl', ReportsRecommendationLikenessCtrl);
+
+  function ReportsRecommendationLikenessCtrl( $scope, $rootScope) {
 
     var vm = this;
     vm.recommendation_likeness = recommendation_likeness;
@@ -39,5 +41,5 @@
       vm.recommendation_likeness();
     });
 
-  });
+  }
 })();

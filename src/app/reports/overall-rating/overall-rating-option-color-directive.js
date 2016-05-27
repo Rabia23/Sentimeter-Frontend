@@ -1,7 +1,9 @@
 (function() {
   angular.module('livefeed.reports.overall_rating')
 
-  .directive('ratingOptionColor', function() {
+  .directive('ratingOptionColor', ratingOptionColor);
+
+  function ratingOptionColor() {
     return {
       restrict: 'A',
       scope: {
@@ -15,6 +17,5 @@
         });
       }
     };
-  });
-
+  }
 })();

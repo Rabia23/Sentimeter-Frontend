@@ -1,7 +1,8 @@
 (function() {
   angular.module( 'livefeed.reports')
+  .config( config );
 
-  .config(function config( $stateProvider ) {
+  function config( $stateProvider ) {
     $stateProvider
     .state( 'reports', {
       url: '/reports',
@@ -47,6 +48,5 @@
       authenticate: true
     });
 
-  });
-
+  }
 })();

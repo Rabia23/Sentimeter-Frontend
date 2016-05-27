@@ -1,7 +1,9 @@
 (function() {
   angular.module( 'livefeed.reports')
 
-  .controller( 'ReportsCtrl', function ReportsCtrl( $scope, $rootScope, flashService, ReportsApi) {
+  .controller( 'ReportsCtrl', ReportsCtrl);
+
+  function ReportsCtrl( $scope, $rootScope, flashService, ReportsApi) {
 
     $scope.today = new Date();
     $scope.show_loading = true;
@@ -51,6 +53,6 @@
       });
     }
 
-  });
+  }
 
 })();

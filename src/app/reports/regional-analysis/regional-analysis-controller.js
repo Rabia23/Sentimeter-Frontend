@@ -1,9 +1,11 @@
 (function() {
   angular.module('livefeed.reports.regional_analysis')
 
-  .controller( 'ReportsRegionalAnalysisCtrl', function( $scope, $rootScope, PatchStatusEnum) {
+  .controller( 'ReportsRegionalAnalysisCtrl', ReportsRegionalAnalysisCtrl);
+
+  function ReportsRegionalAnalysisCtrl( $scope, $rootScope, PatchStatusEnum) {
     $scope.patches = [];
-    $scope.labels = [];
+    $scope.labels = {complaints: {}, qsc: {}, ratings: {}};
 
     var vm = this;
     vm.regional_analysis = regional_analysis;
@@ -100,7 +102,7 @@
 
     function get_complaints_labels(){
 
-      $scope.labels = [];
+      $scope.labels = {complaints: {}, qsc: {}, ratings: {}};
       var complaints_labels = [];
       _.each($scope.patches[0].complaint_analysis, function(item){
         complaints_labels.push({name: item.text, class: item.text.toLowerCase()});
@@ -115,7 +117,7 @@
       vm.get_complaints_data();
       var complaints_labels = [];
       complaints_labels = vm.get_complaints_labels();
-      $scope.labels.push({complaints: complaints_labels});
+      $scope.labels['complaints'] = complaints_labels;
     }
 
     function regional_analysis(){
@@ -126,9 +128,9 @@
       var ratings = [];
 
       rating_labels = vm.get_ratings_labels();
-      $scope.labels[0]["ratings"] = rating_labels;
+      $scope.labels['ratings'] = rating_labels;
       qsc_labels = vm.get_qsc_labels();
-      $scope.labels[0]["qsc"] = qsc_labels;
+      $scope.labels['qsc'] = qsc_labels;
       vm.get_qsc_data();
       vm.get_ratings_data();
     }
@@ -138,5 +140,6 @@
       vm.regional_analysis();
     });
 
-  });
+  }
+
 })();

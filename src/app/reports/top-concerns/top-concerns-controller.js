@@ -1,7 +1,9 @@
 (function() {
   angular.module('livefeed.reports.top_concerns')
 
-  .controller( 'ReportsTopConcernsCtrl', function( $scope, $rootScope) {
+  .controller( 'ReportsTopConcernsCtrl', ReportsTopConcernsCtrl);
+
+  function ReportsTopConcernsCtrl( $scope, $rootScope) {
     var vm = this;
     vm.top_concerns = top_concerns;
 
@@ -24,6 +26,6 @@
       vm.top_concerns();
     });
 
-  });
+  }
 
 })();

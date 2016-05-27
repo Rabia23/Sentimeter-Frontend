@@ -1,7 +1,9 @@
 (function() {
   angular.module('livefeed.reports.business_segment_breakdown')
 
-  .controller( 'ReportsBusinessSegmentBreakDownCtrl', function( $scope, $rootScope) {
+  .controller( 'ReportsBusinessSegmentBreakDownCtrl', ReportsBusinessSegmentBreakDownCtrl);
+
+  function ReportsBusinessSegmentBreakDownCtrl( $scope, $rootScope) {
 
     var vm = this;
     vm.business_segment_breakdown = business_segment_breakdown;
@@ -57,5 +59,5 @@
       vm.business_segment_breakdown();
     });
 
-  });
+  }
 })();

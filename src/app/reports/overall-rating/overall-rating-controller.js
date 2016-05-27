@@ -1,7 +1,9 @@
 (function() {
   angular.module('livefeed.reports.overall_rating')
 
-  .controller( 'ReportsOverallRatingCtrl', function( $scope, $rootScope) {
+  .controller( 'ReportsOverallRatingCtrl', ReportsOverallRatingCtrl);
+
+  function ReportsOverallRatingCtrl( $scope, $rootScope) {
     var vm = this;
     vm.overall_rating = overall_rating;
 
@@ -21,6 +23,6 @@
       vm.overall_rating();
     });
 
-  });
+  }
 
 })();

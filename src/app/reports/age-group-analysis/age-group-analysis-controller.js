@@ -1,7 +1,9 @@
 (function() {
   angular.module('livefeed.reports.age_group_analysis')
 
-  .controller( 'ReportsAgeGroupAnalysisCtrl', function( $scope, $rootScope) {
+  .controller( 'ReportsAgeGroupAnalysisCtrl', ReportsAgeGroupAnalysisCtrl);
+
+  function ReportsAgeGroupAnalysisCtrl( $scope, $rootScope) {
     var vm = this;
     vm.age_group_analysis = age_group_analysis;
 
@@ -25,6 +27,6 @@
       vm.age_group_analysis();
     });
 
-  });
+  }
 
 })();
