@@ -2949,7 +2949,6 @@ li.active,
   font-size: 15px;
   line-height: 18px;
 }
-
 .report-section{
   overflow: hidden;
   max-width: 1170px;
@@ -3070,8 +3069,14 @@ li.active,
   border-style: solid;
   vertical-align: middle;
 }
+.report-section .table > tbody > tr:last-child > td{border-bottom-width: 0;}
 .report-section td:first-child{border-left: 0;}
 .report-section .table.wider td:first-child{border-right: 1px solid #e0e0e0;}
+.report-section .table.wider tr:last-child td{border-bottom-width: 1px;}
+
+.report-section .table.wider > tbody > tr:last-child td{border-bottom-width: 0;}
+
+.report-section .table.wider td.col2{border-left: 0;}
 .promotions.loading .report-section{display: none;}
 .DTTT_Print #wrapper #page-wrapper:before{background: #fff;}
 .report-section td.table-content{
@@ -3214,6 +3219,7 @@ li.active,
   text-align: center;
 }
 .report-section .detail-table.table .heading-row td{border-bottom-width: 3px;}
+.report-section .detail-table.table .heading-row:last-child td{border-bottom-width: 0;}
 .report-section .detail-table.table .subheading-row td{border-bottom-width: 2px;}
 .report-section .detail-table .borders-row td{
   border-bottom: 5px solid #e0e0e0;
@@ -3279,6 +3285,7 @@ li.active,
   font-weight: normal;
   text-align: center;
 }
+.report-section .table.benchmark tbody tr td{border-bottom-width: 1px;}
 .report-section .benchmark time span{
   display: block;
   text-transform: none;
@@ -3305,6 +3312,14 @@ li.active,
   max-width: 500px;
   margin: 0 auto;
 }
+.report-section .nps-table .progress-holder .progress{
+	height: 30px;
+	border-radius: 0;
+	background: none;
+	border: 1px solid #e0e0e0;
+}
+.report-section .nps-table .progress-holder .progress-bar{border-left: 1px solid #f3f3f4;}
+.report-section .nps-table .progress-holder .progress-bar:first-child{border-left-width: 0;}
 .report-section .nps-table .list{
   overflow: hidden;
   padding: 0;
@@ -3337,20 +3352,95 @@ li.active,
 .report-section .nps-table .breakdown-holder h5{
   float: left;
   line-height: 20px;
-  margin: 0 15px 0 0;
+  margin: 15px 15px 0 0;
 }
-.report-section .nps-table .breakdown-holder .progress{margin: 0;}
+.report-section .nps-table .breakdown-holder .progress{
+	margin: 0;
+	padding: 0 0 15px;
+	height: 25px;
+	border-radius: 0;
+	background: none;
+	position: relative;
+}
+.report-section .nps-table .breakdown-holder .progress:after{
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	height: 10px;
+	border: 1px solid #e0e0e0;
+	content: '';
+}
+.report-section .nps-table .breakdown-holder .progress-bar{
+	position: relative;
+	z-index: 2;
+	width: 10% !important;
+	border-right: 1px solid #f3f3f4;
+}
+.report-section .nps-table .breakdown-holder .progress-bar:last-child{border-left-width: 0;}
+.report-section .nps-table .breakdown-holder .progress-bar span{
+	position: absolute;
+	top: 100%;
+	left: 0;
+	padding: 3px 2px;
+	text-align: left;
+	border-left: 1px solid #e0e0e0;
+	color: #000;
+	font-weight: normal;
+	font-size: 8px;
+	line-height: 9px;
+}
+.report-section .nps-table .breakdown-box{overflow: hidden;}
+.breakdown-box .steps{
+	overflow: hidden;
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+.breakdown-box .steps li{
+	float: left;
+	width: 20%;
+	position: relative;
+	padding: 0 0 3px;
+	margin: 0 0 6px;
+	border-bottom: 1px solid #e0e0e0;
+	text-align: center;
+	font-size: 10px;
+	line-height: 12px;
+	text-transform: capitalize;
+}
+.breakdown-box .steps li:first-child{width: 60%;}
+.breakdown-box .steps li:after,
+.breakdown-box .steps li:before{
+	position: absolute;
+	left: 0;
+	top: 100%;
+	width: 1px ;
+	content: '';
+	height: 3px;
+	background: #e0e0e0;
+}
+.breakdown-box .steps li:before{
+	left: auto;
+	right: 0;
+}
 .report-section .nps-table th .count{
   font-size: 44px;
   font-weight: 700;
 }
-.report-section .nps-table tbody th{text-align: center;}
+.report-section .nps-table th{border-bottom: 1px solid #f3f3f4;}
+.report-section .nps-table tbody th:first-child{
+	border-bottom-color: #e0e0e0;
+	background: #fff;
+}
+.report-section .nps-table tbody th,
 .report-section .nps-table td{
   text-align: center;
-  width: 25%;
+  width: 20%;
 }
+.report-section .nps-table tbody th:first-child,
 .report-section .nps-table td:first-child{
-  width: 50%;
+  width: 60%;
   text-align: left;
 }
 .report-section .nps-table td .count{
