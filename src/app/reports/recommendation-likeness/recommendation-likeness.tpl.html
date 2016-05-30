@@ -27,17 +27,26 @@
         <th>
           <div class="breakdown-holder">
             <h5>Response BreakDown</h5>
-            <div class="progress hidden-print" likeness-progress-bar-background data-data="progress_bars">
-              <uib-progress>
-                <uib-bar ng-repeat="bar in progress_bars track by $index" value="bar.percentage" data-color="{{bar.color}}">
-                  <span>{{bar.percentage}}%</span>
-                </uib-bar>
-              </uib-progress>
+            <div class="breakdown-box">
+              <ul class="steps">
+                <li>Detractors</li>
+                <li>Passives</li>
+                <li>Promotors</li>
+              </ul>
+              <div class="progress hidden-print" likeness-progress-bar-background data-data="progress_bars">
+                <uib-progress>
+                  <uib-bar ng-repeat="bar in progress_bars track by $index" value="bar.percentage" data-color="{{bar.color}}">
+                    <span>{{bar.percentage}}%</span>
+                  </uib-bar>
+                </uib-progress>
+              </div>
             </div>
           </div>
         </th>
-        <th><h5>Count</h5></th>
-        <th><h5>Percentage</h5></th>
+        <th>
+          <h5>Count</h5></th>
+        <th>
+          <h5>Percentage</h5></th>
       </tr>
       <tr ng-repeat="data in promoter_score_array">
         <td>
