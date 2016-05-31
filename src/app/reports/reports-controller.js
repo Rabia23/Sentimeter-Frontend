@@ -44,7 +44,7 @@
           $scope.segmentation_rating = data.response.segmentation_rating;
           $scope.opportunity_analysis = data.response.opportunity_analysis;
           $scope.patch_analysis = data.response.patch_analysis;
-
+          $scope.benchmark_analysis = data.response.benchmark_analysis;
           $rootScope.$broadcast('report-data-received');
         }
         else{
