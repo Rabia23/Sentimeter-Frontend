@@ -3316,8 +3316,17 @@ li.active,
 	background: none;
 	border: 1px solid #e0e0e0;
 }
-.report-section .nps-table .progress-holder .progress-bar{border-left: 1px solid #f3f3f4;}
-.report-section .nps-table .progress-holder .progress-bar:first-child{border-left-width: 0;}
+.report-section .nps-table .progress-holder .progress-bar{position: relative;}
+.report-section .nps-table .progress-holder .progress-bar:after{
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: #f3f3f4;
+  content: '';
+}
+.report-section .nps-table .progress-holder .progress-bar:first-child:after{width: 0;}
 .report-section .nps-table .list{
   overflow: hidden;
   padding: 0;
