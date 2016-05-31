@@ -3073,9 +3073,7 @@ li.active,
 .report-section td:first-child{border-left: 0;}
 .report-section .table.wider td:first-child{border-right: 1px solid #e0e0e0;}
 .report-section .table.wider tr:last-child td{border-bottom-width: 1px;}
-
 .report-section .table.wider > tbody > tr:last-child td{border-bottom-width: 0;}
-
 .report-section .table.wider td.col2{border-left: 0;}
 .promotions.loading .report-section{display: none;}
 .DTTT_Print #wrapper #page-wrapper:before{background: #fff;}
@@ -3375,6 +3373,7 @@ li.active,
 	position: relative;
 	z-index: 2;
 	width: 10% !important;
+    background: none;
 	border-right: 1px solid #f3f3f4;
 }
 .report-section .nps-table .breakdown-holder .progress-bar:last-child{border-left-width: 0;}
@@ -3437,6 +3436,11 @@ li.active,
 .report-section .nps-table td{
   text-align: center;
   width: 20%;
+}
+.report-section .nps-table tr.progress-row td{
+  width: 100%;
+  padding-top: 30px;
+  padding-bottom: 30px;
 }
 .report-section .nps-table tbody th:first-child,
 .report-section .nps-table td:first-child{
