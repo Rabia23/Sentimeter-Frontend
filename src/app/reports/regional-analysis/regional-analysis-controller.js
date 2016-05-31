@@ -44,8 +44,8 @@
         if(patch.object.name == $scope.patches[index].region_name) {
           $scope.patches[index]["qsc_total_count"] = patch.data.feedback_count;
           var analysis = [];
-          _.each(patch.data.feedbacks, function(feedback){
-            analysis.push({text: feedback.option__text, count: feedback.count});
+          _.each(patch.data.feedbacks, function(feedback, index){
+            analysis.push({text: feedback.option__text, count: feedback.count, class: "item-box"+(index+11)});
           });
           $scope.patches[index]["qsc_analysis"] = analysis;
         }
@@ -58,8 +58,8 @@
         if(patch.object.name == $scope.patches[index].region_name) {
           $scope.patches[index]["ratings_total_count"] = patch.data.feedback_count;
           var analysis = [];
-          _.each(patch.data.feedbacks, function(feedback){
-            analysis.push({text: feedback.option__text, count: feedback.count});
+          _.each(patch.data.feedbacks, function(feedback, index){
+            analysis.push({text: feedback.option__text, count: feedback.count, class: "item-box"+(index+6)});
           });
           $scope.patches[index]["rating_analysis"] = analysis;
         }
@@ -93,8 +93,8 @@
         $scope.patches.push({region_name: data.object.name});
         $scope.patches[index]["complaints_total_count"] = data.data.feedback_count;
         var complaints = [];
-        _.each(data.data.action_analysis,  function(dat){
-          complaints.push({text: PatchStatusEnum.get_label(dat.action_taken), count: dat.count, action_taken: dat.action_taken});
+        _.each(data.data.action_analysis,  function(dat, index){
+          complaints.push({text: PatchStatusEnum.get_label(dat.action_taken), count: dat.count, action_taken: dat.action_taken, class: "item-box"+(index+2)});
         });
         $scope.patches[index]["complaint_analysis"] = complaints;
       });

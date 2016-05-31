@@ -12,11 +12,11 @@
       link: function(scope, ele, attrs) {
         scope.$watch('data', function(watchedData) {
           if(watchedData !== undefined){
+            var data = scope.data;
             $timeout(function(){
               var bars = $(ele).find(".progress-bar");
-              _.each(bars, function(value){
-                var color = $(value).data("color");
-                $(value).css("background-color", color);
+              _.each(bars, function(value, index){
+                $(value).css("background-color", data[index].color);
               });
             }, 700);
           }

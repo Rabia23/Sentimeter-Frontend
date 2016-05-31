@@ -36,7 +36,7 @@
         return {
           percentage: item.count === 0 ? 0: Math.round((item.count/$scope.recommendation_analysis.feedback_count)*100),
           count: item.count,
-          color: item.option__color_code
+          color: item.count === 0? "": item.option__color_code
         };
       });
 

@@ -54,15 +54,15 @@
         <td class="item-box1">
           <h3>{{data.region_name}}</h3>
         </td>
-        <td class="item-box2" ng-repeat="dat in data.complaint_analysis">
+        <td class="{{dat.class}}" ng-repeat="dat in data.complaint_analysis">
           {{dat.count}}
         </td>
         <td class="item-box5"><span class="count">{{data.complaints_total_count}}</span></td>
-        <td class="item-box6" ng-repeat="dat in data.rating_analysis">
+        <td class="{{dat.class}}" ng-repeat="dat in data.rating_analysis">
           {{dat.count}}
         </td>
         <td class="item-box10"><span class="count">{{data.ratings_total_count}}</span></td>
-        <td class="item-box11" ng-repeat="dat in data.qsc_analysis">
+        <td class="{{dat.class}}" ng-repeat="dat in data.qsc_analysis">
           {{dat.count}}
         </td>
         <td class="item-box14"><span class="count">{{data.qsc_total_count}}</span></td>
