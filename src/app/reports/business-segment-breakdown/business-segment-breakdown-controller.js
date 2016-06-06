@@ -43,8 +43,6 @@
         });
 
       });
-
-      console.log($scope.segmentation_rating);
     
     }
 
