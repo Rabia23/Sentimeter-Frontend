@@ -20,18 +20,18 @@
         <div class="legends-outer" ng-hide="feedback_count==0">
           <div class="legends-holder">
             <strong>Average <em>{{total_average}}%</em></strong>
-            <div class="progress-area">
-              <div class="progress-holder">
-                <div class="progress-block" average-progress-bar-background data-data="recommendation_likeness_data" data-color="bar_color">
-                  <uib-progressbar animate="false" value="total_average" type="success"></uib-progressbar>
-                  <ul class="counts">
-                    <li>0</li>
-                    <li>25</li>
-                    <li>50</li>
-                    <li>75</li>
-                    <li>100</li>
-                  </ul>
-                </div>
+            <div class="breakdown-box">
+              <ul class="steps">
+                <li>Detractors</li>
+                <li>Passives</li>
+                <li>Promotors</li>
+              </ul>
+              <div class="progress hidden-print" likeness-progress-bar-background data-data="progress_bars">
+                <uib-progress>
+                  <uib-bar ng-repeat="bar in progress_bars track by $index" value="bar.percentage">
+                    <span>{{bar.percentage}}%</span>
+                  </uib-bar>
+                </uib-progress>
               </div>
             </div>
           </div>
