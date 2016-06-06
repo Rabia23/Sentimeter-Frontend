@@ -1,0 +1,24 @@
+<section class="table-section">
+  <table class="table benchmark" ng-repeat="month in months track by $index">
+    <thead>
+      <tr>
+        <th class="col1">
+          <h5>Benchmark Map <small>({{month}})</small></h5>
+        </th>
+        <th ng-repeat="date in get_dates($index)">
+          <time datetime="{{date.date}}">{{get_day(date.date)}}</time>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="highlight" ng-repeat="branch in benchmark_analysis.branches_data">
+        <td class="col1">
+          <h5>{{branch.name}}</h5>
+        </td>
+        <td ng-repeat="detail in get_branch_detail(branch, $parent.$index)" ng-class="{'hilighted': detail.count_exceeded}">
+          {{detail.feedback_count}}
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</section>

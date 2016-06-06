@@ -1,0 +1,39 @@
+<section class="table-section">
+  <table class="table">
+    <thead>
+      <tr>
+        <th class="item1"><h5>Business segment breakdown</h5></th>
+        <th class="item01"><span class="count">Total count</span></th>
+        <th class="item2" ng-repeat="segment_name in segment_names">
+          {{segment_name}}
+        </th>
+      </tr>
+    </thead>
+    <tbody ng-repeat="rating in segmentation_rating">
+      <tr class="highlight" ng-class="{'red': rating.option_object.text === 'Quality', 'yellow': rating.option_object.text === 'Service', 'blue': rating.option_object.text === 'Cleanliness'}">
+        <td class="item1">
+          <h5>
+            {{rating.option_object.text}}
+          </h5>
+        </td>
+        <td class="item01">
+          <span class="count">{{get_total(rating.segments)}}</span>
+        </td>
+        <td class="item2" ng-repeat="segment in rating.segments">{{segment.count}}</td>
+      </tr>
+      <tr>
+        <td colspan="7" class="table-content">
+          <table class="table" >
+            <tr ng-repeat="sub_option_segment in rating.sub_option_segments">
+              <td class="item1">{{sub_option_segment.option_name}}</td>
+              <td class="item01"><span class="count">{{get_total(sub_option_segment.segments)}}</span></td>
+              <td class="item2" ng-repeat="sub_segment in sub_option_segment.segments">
+                {{sub_segment.count}}
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</section>

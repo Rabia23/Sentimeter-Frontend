@@ -1,6 +1,6 @@
 (function() {
-    angular.module( 'livefeed.dashboard.overall_feedback', [
-      'livefeed.overall_feedback.chart'
-    ]);
+  angular.module( 'livefeed.dashboard.overall_feedback', [
+    'livefeed.overall_feedback.chart'
+  ]);
 
 })();

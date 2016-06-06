@@ -1,0 +1,61 @@
+<section class="table-section">
+  <table class="table nps-table">
+    <thead>
+      <tr>
+        <th colspan="3">
+          <span class="count" ng-if="nps_score > 0">+{{nps_score}}</span>
+          <span class="count" ng-if="nps_score <= 0">{{nps_score}}</span>
+          <h5>Net Promoter Score</h5>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="hidden-print progress-row">
+        <td colspan="3">
+          <div class="progress-holder" likeness-progress-bar-background data-data="promoter_score_array">
+            <uib-progress>
+              <uib-bar ng-repeat="data in promoter_score_array track by $index" value="data.percentage" type="{{data.type}}" data-color="{{data.color}}"></uib-bar>
+            </uib-progress>
+            <ul class="list">
+              <li ng-repeat="data in promoter_score_array">
+                <span class="bullet" label-color data-color="data.color"></span> {{data.percentage}}% {{data.name}}
+              </li>
+            </ul>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <th>
+          <div class="breakdown-holder">
+            <h5>Response BreakDown</h5>
+            <div class="breakdown-box">
+              <ul class="steps">
+                <li>Detractors</li>
+                <li>Passives</li>
+                <li>Promotors</li>
+              </ul>
+              <div class="progress hidden-print" likeness-progress-bar-background data-data="progress_bars">
+                <uib-progress>
+                  <uib-bar ng-repeat="bar in progress_bars track by $index" value="bar.percentage">
+                    <span>{{bar.percentage}}%</span>
+                  </uib-bar>
+                </uib-progress>
+              </div>
+            </div>
+          </div>
+        </th>
+        <th>
+          <h5>Count</h5></th>
+        <th>
+          <h5>Percentage</h5></th>
+      </tr>
+      <tr ng-repeat="data in promoter_score_array">
+        <td>
+          <h5>{{data.name}} <small>{{data.text}}</small></h5>
+        </td>
+        <td><span class="count">{{data.count}}</span></td>
+        <td><span class="count">{{data.percentage}}%</span></td>
+      </tr>
+    </tbody>
+  </table>
+</section>

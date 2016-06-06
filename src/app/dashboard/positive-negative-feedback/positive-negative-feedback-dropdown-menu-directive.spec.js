@@ -16,9 +16,9 @@ describe('positiveNegativeDropDownMenuDirective', function(){
 
   it('should call jcf.refresh method when button clicked', function(){
     spyOn(jcf, 'refresh');
-    setFixtures('<button id="single-button2"> </button>');
+    setFixtures('<button id="dropdown-button"> </button>');
     $element.scope().$apply();
-    $('#single-button2').trigger('click');
+    $('#dropdown-button').trigger('click');
     $timeout.flush();
     expect(jcf.refresh).toHaveBeenCalled();
   });

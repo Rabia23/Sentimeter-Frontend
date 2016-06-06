@@ -1,7 +1,9 @@
 (function() {
   angular.module( 'livefeed.error_404')
 
-  .config(function config( $stateProvider ) {
+  .config( config );
+
+  function config( $stateProvider ) {
     $stateProvider
     .state( 'error_404', {
       url: '/404',
@@ -12,5 +14,5 @@
       },
       authenticate: false
     });
-  });
+  }
 })();

@@ -1,7 +1,9 @@
 (function() {
   angular.module( 'livefeed.promotions')
 
-  .config(function config( $stateProvider ) {
+  .config( config );
+
+  function config( $stateProvider ) {
     $stateProvider
     .state( 'promotions', {
       url: '/promotions',
@@ -26,6 +28,6 @@
       authenticate: true
     });
 
-  });
+  }
 
 })();

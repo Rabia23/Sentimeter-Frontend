@@ -1,0 +1,22 @@
+<section class="table-section">
+  <table class="table">
+    <thead>
+      <tr>
+        <th class="column1"><h5>Age Group Analysis</h5></th>
+        <th class="column2">
+          <h5>Male</h5>
+        </th>
+        <th class="column3"><h5>FeMale</h5></th>
+        <th class="column4"><h5>Total Count</h5></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="highlight" ng-repeat="data in customer_data">
+        <td class="column1"><h5>{{data.label}}</h5></td>
+        <td class="column2">{{data.male_count}}</td>
+        <td class="column3">{{data.female_count}}</td>
+        <td class="column4"><span class="count">{{data.total_count}}</span></td>
+      </tr>
+    </tbody>
+  </table>
+</section>

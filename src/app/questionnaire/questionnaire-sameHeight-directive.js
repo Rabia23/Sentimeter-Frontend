@@ -1,6 +1,9 @@
 (function() {
   angular.module('livefeed.questionnaire')
-  .directive('questionSameHeight', function() {
+  
+  .directive('questionSameHeight', questionSameHeight );
+
+  function questionSameHeight() {
     return {
       restrict: 'A',
       scope: {
@@ -14,5 +17,5 @@
         });
       }
     };
-  });
+  }
 })();

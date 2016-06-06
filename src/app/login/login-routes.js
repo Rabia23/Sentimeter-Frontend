@@ -1,7 +1,9 @@
 (function() {
-  angular.module( 'livefeed.login')
+  angular.module ( 'livefeed.login' )
 
-  .config(function config( $stateProvider ) {
+  .config( config );
+
+  function config( $stateProvider ) {
     $stateProvider
     .state( 'login', {
       url: '/login',
@@ -13,5 +15,5 @@
       },
       authenticate: false
     });
-  });
+  }
 })();

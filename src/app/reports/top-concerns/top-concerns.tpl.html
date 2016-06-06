@@ -1,0 +1,26 @@
+<section class="table-section">
+  <table class="table wider">
+    <thead>
+      <tr>
+        <th colspan="2">
+          <h5>Top Opportunities</h5>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="data in concerns_splice_data">
+        <td ng-repeat="dat in data">
+          <table class="table">
+            <tr class="highlight fries">
+              <td class="col1">
+                <strong class="num">{{dat.index}} : </strong>
+                <h5>{{dat.name}}</h5>
+              </td>
+              <td class="col2"><span class="count">{{dat.count}}</span> Mentions</td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</section>

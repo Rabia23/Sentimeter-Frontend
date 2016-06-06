@@ -1,0 +1,31 @@
+<section class="table-section">
+  <table class="table wide">
+    <thead>
+      <tr>
+        <th class="col1">
+          <h5>What would make you visit McDonald's more often?</h5>
+        </th>
+        <th class="col2">
+          <span class="count">Total Count</span>
+        </th>
+        <th class="col3">
+          <span class="count">Percentage</span>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class= "highlight" ng-repeat="data in opportunity_data" opportunity-option-color data-color="data.color">
+        <td class="col1">
+          <strong class="num">{{data.index}} : </strong>
+          <h5>{{data.name}}</h5>
+        </td>
+        <td class="col2">
+          <span class="count">{{data.count}}</span>
+        </td>
+        <td class="col3">
+          <span class="count">{{data.percentage}}%</span>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</section>

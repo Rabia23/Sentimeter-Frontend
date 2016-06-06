@@ -1,0 +1,72 @@
+<section class="table-section">
+  <h1>Patch Analysis</h1>
+  <table class="table detail-table">
+    <thead>
+      <tr>
+        <th>BRANCH</th>
+        <th colspan="4">COMPLAINTS</th>
+        <th colspan="5">RATING</th>
+        <th colspan="4">QSC</th>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+        <td colspan="4">
+          <ul class="items">
+            <li class="{{label.class}}" ng-repeat="label in labels.complaints"><span class="bullet"></span>
+              {{label.name}}
+            </li>
+          </ul>
+        </td>
+        <td colspan="5">
+          <ul class="items">
+            <li class="{{label.class}}" ng-repeat="label in labels.ratings"><span class="bullet"></span>
+              {{label.name}}
+            </li>
+          </ul>
+        </td>
+        <td colspan="4">
+          <ul class="items">
+            <li class="{{label.class}}" ng-repeat="label in labels.qsc"><span class="bullet"></span>
+              {{label.name}}
+            </li>
+          </ul>
+        </td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="borders-row">
+        <td class="item-box1">&nbsp;</td>
+        <td class="item-box2">&nbsp;</td>
+        <td class="item-box3">&nbsp;</td>
+        <td class="item-box4">&nbsp;</td>
+        <td class="item-box5">&nbsp;</td>
+        <td class="item-box6">&nbsp;</td>
+        <td class="item-box7">&nbsp;</td>
+        <td class="item-box8">&nbsp;</td>
+        <td class="item-box9">&nbsp;</td>
+        <td class="item-box10">&nbsp;</td>
+        <td class="item-box11">&nbsp;</td>
+        <td class="item-box12">&nbsp;</td>
+        <td class="item-box13">&nbsp;</td>
+        <td class="item-box14">&nbsp;</td>
+      </tr>
+      <tr class="heading-row" ng-repeat="data in patches">
+        <td class="item-box1">
+          <h3>{{data.region_name}}</h3>
+        </td>
+        <td class="{{dat.class}}" ng-repeat="dat in data.complaint_analysis">
+          {{dat.count}}
+        </td>
+        <td class="item-box5"><span class="count">{{data.complaints_total_count}}</span></td>
+        <td class="{{dat.class}}" ng-repeat="dat in data.rating_analysis">
+          {{dat.count}}
+        </td>
+        <td class="item-box10"><span class="count">{{data.ratings_total_count}}</span></td>
+        <td class="{{dat.class}}" ng-repeat="dat in data.qsc_analysis">
+          {{dat.count}}
+        </td>
+        <td class="item-box14"><span class="count">{{data.qsc_total_count}}</span></td>
+      </tr>
+    </tbody>
+  </table>
+</section>

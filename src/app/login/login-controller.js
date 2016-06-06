@@ -1,7 +1,9 @@
 (function() {
   angular.module('livefeed.login')
 
-  .controller( 'LoginCtrl', function LoginController( $scope, $rootScope, $state, Authentication, TokenHandler, flashService, Auth) {
+  .controller( 'LoginCtrl', LoginCtrl );
+
+  function LoginCtrl( $scope, $rootScope, $state, Authentication, TokenHandler, flashService, Auth) {
     $scope.submitted = false;
     $scope.authenticate = {};
     $scope.show_loading = false;
@@ -54,5 +56,5 @@
       }
     };
 
-  });
+  }
 })();
