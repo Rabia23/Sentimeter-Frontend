@@ -19,7 +19,7 @@
         <td class="item01">
           <span class="count">{{get_total(rating.segments)}}</span>
         </td>
-        <td class="item2" ng-repeat="segment in rating.segments">{{segment.count}}</td>
+        <td class="item2" ng-repeat="segment in rating.segments" ng-class="{'hilighted': (segment.count == rating.option_object.max_segment_count)}">{{segment.count}}</td>
       </tr>
       <tr>
         <td colspan="7" class="table-content">
@@ -27,7 +27,7 @@
             <tr ng-repeat="sub_option_segment in rating.sub_option_segments">
               <td class="item1">{{sub_option_segment.option_name}}</td>
               <td class="item01"><span class="count">{{get_total(sub_option_segment.segments)}}</span></td>
-              <td class="item2" ng-repeat="sub_segment in sub_option_segment.segments">
+              <td class="item2" ng-repeat="sub_segment in sub_option_segment.segments" ng-class="{'hilighted': (sub_segment.count == sub_option_segment.sub_max_segment_count) && (sub_segment.count != 0)}">
                 {{sub_segment.count}}
               </td>
             </tr>
