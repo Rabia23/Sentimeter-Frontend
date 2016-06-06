@@ -1,7 +1,9 @@
 (function() {
   angular.module( 'livefeed.dashboard.regional_analysis')
 
-  .factory('PatchStatusEnum', [function() {
+  .factory('RegionalStatusEnum', [RegionalStatusEnum]);
+
+  function RegionalStatusEnum() {
 
     var labels = ["Unprocessed", "Unrecoverable", "Recovered", "NAN"];
     var user_role = {
@@ -10,22 +12,21 @@
     };
 
     return {
-
+      get_branch_manager_value: function(){
+        return user_role["Branch Manager"];
+      },
+      get_operational_consultant_value: function(){
+        return user_role["Operational Consultant"];
+      },
       get_index: function(value){
         return labels.indexOf(value) + 1;
       },
-
       get_skip_label_index: function(){
         return labels.indexOf("NAN") + 1;
-      },
-      get_branch_manager_value :function(){
-        return user_role["Branch Manager"];
-      },
-      get_operational_consultant_value :function(){
-        return user_role["Operational Consultant"];
       }
+
     };
 
-  }]);
+  }
 
 })();

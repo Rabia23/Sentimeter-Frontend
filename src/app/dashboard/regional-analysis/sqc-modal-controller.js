@@ -1,7 +1,7 @@
 (function() {
   angular.module('livefeed.dashboard.regional_analysis')
 
-  .controller('SQCModalCtrl', function ($scope, Graphs, PatchStatusEnum, regionalAnalysisChartService, $uibModalInstance, area, region, city, branch, option, start_date, end_date, TokenHandler, flashService){
+  .controller('SQCModalCtrl', function ($scope, Graphs, RegionalStatusEnum, regionalAnalysisChartService, $uibModalInstance, area, region, city, branch, option, start_date, end_date, TokenHandler, flashService){
     var user_role = TokenHandler.get_user_role();
     var type_id, city_id, area_id;
 
@@ -12,14 +12,14 @@
     $scope.show_div = false;
     $scope.show_loading = false;
 
-    if(user_role == PatchStatusEnum.get_branch_manager_value())
+    if(user_role == RegionalStatusEnum.get_branch_manager_value())
     {
       city_id = "";
       area = "";
       region = "";
       city = "";
     }
-    if(user_role == PatchStatusEnum.get_operational_consultant_value()){
+    if(user_role == RegionalStatusEnum.get_operational_consultant_value()){
       area_id = "";
       area = "";
     }

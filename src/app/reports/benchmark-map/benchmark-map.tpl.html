@@ -15,7 +15,7 @@
         <td class="col1">
           <h5>{{branch.name}}</h5>
         </td>
-        <td ng-repeat="detail in get_branch_detail(branch, $parent.$index)" ng-class="{'hilighted': !detail.count_exceeded}">
+        <td ng-repeat="detail in get_branch_detail(branch, $parent.$index)" ng-class="{'hilighted': !detail.count_exceeded && detail.feedback_count!=0}">
           {{detail.feedback_count}}
         </td>
       </tr>

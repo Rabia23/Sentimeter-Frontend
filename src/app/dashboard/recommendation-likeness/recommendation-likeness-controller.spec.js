@@ -16,15 +16,15 @@ describe('RecommendationLikenessCtrl', function(){
     httpResponse = {
       success: true,
       response: {
-        "feedback_count": 18,
+        "feedback_count": 10,
         "feedbacks": [
           {
             "count": 1,
-            "option__color_code": "#0E590A",
+            "option__color_code": "#ac1a1a",
             "option__parent_id": null,
             "option__score": 0,
-            "option__text": "10",
-            "option_id": 97
+            "option__text": "2",
+            "option_id": 92
           },
           {
             "count": 1,
@@ -32,7 +32,39 @@ describe('RecommendationLikenessCtrl', function(){
             "option__parent_id": null,
             "option__score": 0,
             "option__text": "7",
+            "option_id": 97
+          },
+          {
+            "count": 3,
+            "option__color_code": "#e73a3a",
+            "option__parent_id": null,
+            "option__score": 0,
+            "option__text": "4",
             "option_id": 94
+          },
+          {
+            "count": 1,
+            "option__color_code": "#0E590A",
+            "option__parent_id": null,
+            "option__score": 0,
+            "option__text": "10",
+            "option_id": 100
+          },
+          {
+            "count": 2,
+            "option__color_code": "#01ad0f",
+            "option__parent_id": null,
+            "option__score": 0,
+            "option__text": "6",
+            "option_id": 96
+          },
+          {
+            "count": 2,
+            "option__color_code": "#0E590A",
+            "option__parent_id": null,
+            "option__score": 0,
+            "option__text": "9",
+            "option_id": 99
           }
         ]
       }
@@ -66,11 +98,9 @@ describe('RecommendationLikenessCtrl', function(){
       $httpBackend.whenGET(apiLink).respond(httpResponse);
       $httpBackend.flush();
 
-      expect($rootScope.feedback_count).toBe(18);
-      expect($rootScope.recommendation_likeness_data[0]["category"]).toEqual("7");
-      expect($rootScope.total_average).toBe(9);
-      expect($rootScope.bar_color).toEqual("#ac1a1a");
-
+      expect($rootScope.feedback_count).toBe(10);
+      expect($rootScope.recommendation_likeness_data[0]["category"]).toEqual("2");
+      expect($rootScope.nps_score).toBe(-30);
     });
 
     it('shows flash when api call fails', function(){
@@ -82,14 +112,6 @@ describe('RecommendationLikenessCtrl', function(){
       $httpBackend.flush();
 
       expect(flashService.createFlash).toHaveBeenCalled();
-    });
-
-  });
-
-  describe('getAverageBarColor method', function(){
-
-    it('returns average bar color', function(){
-      expect(controller.getAverageBarColor(9)).toEqual("#ac1a1a");
     });
 
   });
