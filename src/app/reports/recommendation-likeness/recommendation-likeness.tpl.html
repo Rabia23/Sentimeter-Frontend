@@ -3,7 +3,8 @@
     <thead>
       <tr>
         <th colspan="3">
-          <span class="count">+37</span>
+          <span class="count" ng-if="nps_score > 0">+{{nps_score}}</span>
+          <span class="count" ng-if="nps_score <= 0">{{nps_score}}</span>
           <h5>Net Promoter Score</h5>
         </th>
       </tr>

@@ -8,6 +8,10 @@
     var vm = this;
     vm.recommendation_likeness = recommendation_likeness;
 
+    function get_nps_score_count(){
+      $scope.nps_score = $scope.promoter_score_array[2].percentage - $scope.promoter_score_array[0].percentage;
+    }
+
     function get_promoter_score_percentages(){
 
       _.each($scope.promoter_score_array, function(item, index){
@@ -55,6 +59,7 @@
 
       get_promoter_score_percentages();
       get_promoter_score_colors();
+      get_nps_score_count();
 
     }
 
