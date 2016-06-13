@@ -1,7 +1,18 @@
 <div class="ibox float-e-margins float-e-margin-none" ng-class="{loading: show_loading}">
   <div class="title-outer">
     <div class="ibox-title">
-      <h5>What would make you happier at work Today?</h5>
+      <div class="btn-group" uib-dropdown is-open="status.isopen">
+        <h5>
+          <button id="single-button" type="button" uib-dropdown-toggle>
+            <span class="caret"></span> What would make you happier at work Today?
+          </button>
+        </h5>
+        <ul uib-dropdown-menu role="menu" aria-labelledby="single-button">
+          <li role="menuitem"><a>item 1</a></li>
+          <li role="menuitem"><a>item 2</a></li>
+          <li role="menuitem"><a>item 3</a></li>
+        </ul>
+      </div>
       <div class="ibox-tools">
         <ul class="tab-links">
           <li>
