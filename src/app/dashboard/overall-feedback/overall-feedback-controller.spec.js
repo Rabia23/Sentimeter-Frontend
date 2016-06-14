@@ -14,27 +14,30 @@ describe('OverallFeedbackCtrl', function(){
     window.ga = function(){};
     mockResponse = {
       success: true,
-      response: {
-        "feedback_count": 48,
-        "feedbacks": [
-          {
-            "count": 10,
-            "option__color_code": "#0E590A",
-            "option__parent_id": null,
-            "option__score": 5,
-            "option__text": "Very happy",
-            "option_id": 5
-          },
-          {
-            "count": 15,
-            "option__color_code": "#01ad0f",
-            "option__parent_id": null,
-            "option__score": 4,
-            "option__text": "Happy",
-            "option_id": 4
-          }
-        ]
-      }
+      response: [
+        {
+          "question": "How happy are you at your job today?",
+          "feedback_count": 25,
+          "feedback": [
+            {
+              "count": 10,
+              "option__color_code": "#0E590A",
+              "option__parent_id": null,
+              "option__score": 5,
+              "option__text": "Very happy",
+              "option_id": 5
+            },
+            {
+              "count": 15,
+              "option__color_code": "#01ad0f",
+              "option__parent_id": null,
+              "option__score": 4,
+              "option__text": "Happy",
+              "option_id": 4
+            }
+          ]
+        }
+      ]
     };
 
   }));
@@ -57,16 +60,14 @@ describe('OverallFeedbackCtrl', function(){
   });
 
   describe('showGraph method', function(){
-    it('init scope arrays and returns maximum count when api call succeeds', function(){
+    it('init scope array and object when api call succeeds', function(){
       controller.show_graph();
 
       $httpBackend.whenGET(apilink).respond(mockResponse);
       $httpBackend.flush();
 
-      expect($rootScope.feedback_count).toBe(48);
-      expect($rootScope.labels[0]).toEqual({option_name: 'Very happy', color: '#0E590A'});
-      expect(controller.maximum.count).toBe(15);
-      expect($rootScope.bar.labels[0]).toEqual('Very happy');
+      expect($rootScope.rating_data[0].question).toEqual("How happy are you at your job today?");
+      expect($rootScope.question_data.question).toEqual("How happy are you at your job today?");
     });
 
     it('shows flash when api call fails', function(){
@@ -78,6 +79,23 @@ describe('OverallFeedbackCtrl', function(){
       $httpBackend.flush();
 
       expect(flashService.createFlash).toHaveBeenCalled();
+    });
+  });
+
+  describe('get_question_data method', function(){
+
+    it('init $scope object when function called', function(){
+      var question = "How happy are you at your job today?";
+      $rootScope.rating_data = [
+        {
+          "question": "How happy are you at your job today?",
+          "feedback_count": 25,
+          "show_canvas": true,
+          "show_labels": true
+        }
+      ];
+      $rootScope.get_question_data(question);
+      expect($rootScope.question_data.question).toEqual("How happy are you at your job today?");
     });
   });
 

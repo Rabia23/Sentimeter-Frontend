@@ -4,13 +4,13 @@
       <div class="btn-group" uib-dropdown is-open="status.isopen">
         <h5>
           <button id="single-button" type="button" uib-dropdown-toggle>
-            <span class="caret"></span> What would make you happier at work Today?
+            <span class="caret"></span> {{question_data.question}}
           </button>
         </h5>
         <ul uib-dropdown-menu role="menu" aria-labelledby="single-button">
-          <li role="menuitem"><a>item 1</a></li>
-          <li role="menuitem"><a>item 2</a></li>
-          <li role="menuitem"><a>item 3</a></li>
+          <li role="menuitem" ng-repeat="data in opportunities_data">
+            <a ng-click="get_question_data(data.question)">{{data.question}}</a>
+          </li>
         </ul>
       </div>
       <div class="ibox-tools">
@@ -34,7 +34,7 @@
           <div class="chart-outer">
             <div class="progress-container">
               <div class="progress-area">
-                <div class="progress-holder" ng-repeat="dat in opportunity_data" data-color="dat.colour" data-data="opportunity_data" opportunity-bar-background>
+                <div class="progress-holder" ng-repeat="dat in question_data.data" data-color="dat.colour" data-data="question_data.data" opportunity-bar-background>
                   <div class="progress-inner">
                     <small>
                       <em>
