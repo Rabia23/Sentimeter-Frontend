@@ -741,7 +741,6 @@ html body.errorpage {background: #eee;}
   z-index: 5;
   border-bottom: 1px solid #e7eaec;
 }
-.opportunities .ibox-title {overflow: hidden;}
 .calender-outer.add {
   cursor: default;
   min-width: inherit;
@@ -2926,6 +2925,36 @@ li.active,
   font-size: 14px;
   text-align: center;
 }
+.title-outer .btn-group{
+  float: left;
+  z-index: 999;
+  width: 85%;
+}
+.title-outer .btn-group button,
+.title-outer .btn-group a{cursor: pointer;}
+.title-outer .btn-group h5{width: 100%;}
+.title-outer .btn-group h5 button{
+	padding: 0;
+	border: 0;
+	background: none;
+    width: 100%;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    line-height: 1.2;
+    white-space: nowrap;
+    text-align: left;
+}
+.title-outer .btn-group.open .dropdown-toggle{box-shadow: none;}
+.title-outer .btn-group .dropdown-menu{border-radius: 0;}
+.title-outer .dropdown-menu>li>a{
+  white-space: normal;
+  padding: 5px 10px;
+  border-radius: 0;
+}
+.dropdown-menu>li>a:focus, .dropdown-menu>li>a:hover{
+  background: #3f99d5;
+  color: #fff;
+}
 @media screen and (min-width: 768px) {
   .progress-box .progress-area{
     position: relative;
@@ -3346,7 +3375,8 @@ li.active,
   .timeline-section .ibox-tools,
   .data-block .ibox-tools,
   .map-section .ibox-tools,
-  .rating .ibox-tools {
+  .rating .ibox-tools,
+  .opportunities .ibox-tools{
     clear: none;
     width: inherit;
     padding-top: 0;
@@ -3355,13 +3385,15 @@ li.active,
   .data-block .tab-links,
   .timeline-section .tab-links,
   .map-section .tab-links,
-  .rating .tab-links {
+  .rating .tab-links,
+  .opportunities .tab-links{
     border-top: 0;
     padding-left: 0;
     clear: none;
     margin: -15px -15px -8px 0;
     text-align: right;
   }
+  .opportunities .tab-links li,
   .data-block .tab-links li,
   .timeline-section .tab-links li,
   .map-section .tab-links li,
@@ -3372,7 +3404,8 @@ li.active,
   .data-block .tab-links li .calender-outer,
   .timeline-section .tab-links li .calender-outer,
   .map-section .tab-links li .calender-outer,
-  .rating .tab-links li .calender-outer {height: 48px;}
+  .rating .tab-links li .calender-outer,
+  .opportunities .tab-links li .calender-outer{height: 48px;}
   .comments-drop .icon-holder i {
     font-size: 55px;
     line-height: 55px;
@@ -3632,7 +3665,7 @@ li.active,
     min-height: inherit;
   }
   .header-caption {padding: 55px 0 5px;}
-  body.mini-navbar .tab-links a {font-size: 10px;}
+  body.mini-navbar .tab-links a {font-size: 9px;}
   .loader {margin: 11% 16%;}
   .morris-block-holder .morris-graph-holder .morris-holder .chart-container {max-width: 70%;}
   .morris-block-holder .morris-content-holder {width: 50%;}

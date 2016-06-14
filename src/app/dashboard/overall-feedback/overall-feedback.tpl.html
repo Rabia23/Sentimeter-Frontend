@@ -3,7 +3,18 @@
     <div class="ibox float-e-margins" ng-class="{loading: show_loading}">
       <div class="title-outer">
         <div class="ibox-title">
-          <h5>Overall Rating <small> (<strong>{{feedback_count}}</strong>)</small></h5>
+          <div class="btn-group" uib-dropdown is-open="status.isopen">
+            <h5>
+              <button id="single-button" type="button" uib-dropdown-toggle>
+                <span class="caret"></span> Overall Rating <small> (<strong>{{question_data.feedback_count}}</strong>)</small>
+              </button>
+            </h5>
+            <ul uib-dropdown-menu role="menu" aria-labelledby="single-button">
+              <li role="menuitem" ng-repeat="data in rating_data">
+                <a ng-click="get_question_data(data.question)">{{data.question}}</a>
+              </li>
+            </ul>
+          </div>
           <div class="ibox-tools">
             <ul class="tab-links">
               <li>
@@ -22,9 +33,9 @@
         <div class="content-inner">
           <div class="legends-outer">
             <div class="legends-holder">
-              <ul class="legends-list" ng-show="show_labels">
-                <li ng-repeat="label in ::labels track by $index">
-                  <span class="bullet" back-ground data-color="::label.color"></span>{{::label.option_name}}
+              <ul class="legends-list" ng-show="question_data.show_labels">
+                <li ng-repeat="label in question_data.labels track by $index">
+                  <span class="bullet" back-ground data-color="label.color"></span>{{label.option_name}}
                 </li>
               </ul>
             </div>
@@ -32,8 +43,8 @@
           <div class="content-block">
             <div class="ibox-content float-chart-block">
               <div class="flot-chart">
-                <canvas ng-show="show_canvas" id="bar" class="chart chart-bar" chart-data="bar.data" chart-labels="bar.labels" chart-colours="bar.colours" chart-options="bar.options"></canvas>
-                <div ng-hide="show_canvas" class="message-holder">
+                <canvas ng-show="question_data.show_canvas" id="bar" class="chart chart-bar" chart-data="question_data.bar.data" chart-labels="question_data.bar.labels" chart-colours="question_data.bar.colours" chart-options="question_data.bar.options"></canvas>
+                <div ng-hide="question_data.show_canvas" class="message-holder">
                   <h2>No Data Available</h2></div>
               </div>
             </div>

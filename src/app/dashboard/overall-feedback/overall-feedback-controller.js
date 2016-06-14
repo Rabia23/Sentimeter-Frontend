@@ -1,11 +1,9 @@
 (function() {
   angular.module('livefeed.dashboard.overall_feedback')
 
-  .controller( 'OverallFeedbackCtrl', function DashboardController( $scope, Graphs, overallFeedbackChartService, flashService ) {
+  .controller( 'OverallFeedbackCtrl', function DashboardController( $scope, Graphs, flashService, overallFeedbackDataService ) {
 
     $scope.show_loading = true;
-    $scope.show_labels = true;
-
     $scope.today = new Date();
 
     var vm = this;
@@ -32,22 +30,19 @@
       opens: "left"
     };
 
+    $scope.get_question_data = function(question){
+      $scope.question_data = {};
+      $scope.question_data = _.find($scope.rating_data, function(data){ return data.question == question; });
+    };
+
     function show_graph(start_date, end_date){
       Graphs.overall_feedback(start_date, end_date).$promise.then(function(graph_data){
+        $scope.show_loading = false;
         if(graph_data.success) {
-          $scope.feedback_count = graph_data.response.feedback_count;
-          $scope.show_labels = graph_data.response.feedback_count === 0 ? false : true;
-          $scope.labels = _.map(graph_data.response.feedbacks, function (value) {
-            return {option_name: value.option__text, color: value.option__color_code};
-          });
-          $scope.show_canvas = graph_data.response.feedback_count === 0 ? false : true;
-          vm.maximum = {};
-          vm.maximum = _.max(graph_data.response.feedbacks, function (data) {
-            return data.count;
-          });
-          $scope.bar = {};
-          $scope.bar = overallFeedbackChartService.getBarChartData(graph_data.response, vm.maximum.count);
-          $scope.show_loading = false;
+          $scope.rating_data = [];
+          $scope.question_data = {};
+          $scope.rating_data = overallFeedbackDataService.getFeedbackData(graph_data);
+          $scope.question_data = $scope.rating_data[0];
         }
         else {
           flashService.createFlash(graph_data.message, "danger");
