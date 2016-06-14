@@ -38,7 +38,6 @@
 
     function draw_opportunity_analysis(start_date, end_date){
       Graphs.opportunity_analysis("", "", "", start_date, end_date).$promise.then(function(opportunity_data){
-        console.log(opportunity_data);
         $scope.show_loading = false;
         if(opportunity_data.success) {
           $scope.opportunities_data = [];
