@@ -119,8 +119,36 @@ html body.errorpage {background: #eee;}
   height: 100%;
   min-height: 100%;
 }
+/* updated start*/
+
+#wrapper .same-height-parent .data-block .ibox-content.content-holder{
+  padding-top: 0;
+  padding-bottom: 0;
+  border-top: 1px solid #e7eaec;
+  display: block;
+}
+.equal-inner{
+  display: table;
+  table-layout: fixed;
+  width: 100%;
+  height: 100%;
+}
+.equal-inner .breadcrum-holder{
+  display: table-header-group;
+  height: 1%;
+  width: 100%;
+}
+.equal-inner .breadcrum-holder .breadcrum{padding: 0;}
+.morris-content-outer .equal-inner .morris-content-holder{width: 33.33%;}
+.equal-inner .regional-container{
+  display: table-cell;
+  vertical-align: middle;
+  width: 100%;
+}
+
+/* updated end*/
 #wrapper .data-block .content-holder{border-top: 1px solid #e7eaec;}
-#wrapper .data-block .ibox-content:after{
+#wrapper .data-block.add .ibox-content:after{
   display: inline-block;
   vertical-align: middle;
   content: "";
@@ -1754,6 +1782,11 @@ body > .jcf-select-drop.jcf-drop-flipped {margin: 1px 0 0;}
   line-height: 1.1;
   text-transform: uppercase;
 }
+
+/* Updated Styles Start */
+.progress-area small em {font-size: 11px;}
+/* Updated Styles Start */
+
 .progress-area small a {color: #12122e;}
 .progress-area small a:hover,
 .progress-area small a:active {color: #999;}
@@ -3689,6 +3722,14 @@ li.active,
     padding: 0 5px 10px;
   }
   .grid-container .grid-item {width: 25%;}
+  /* Updated Styles Start */
+  
+  .blocks-holder>.row:first-child{height: 62%;}
+  .blocks-holder>.row{height: 38%;}
+  .progress-area small em{font-size: 10px;}
+  .opportunities .progress-area .progress-holder{padding: 0 0 10px;}
+  
+  /* Updated Styles End */
 }
 
 @media screen and (max-width: 1600px) {
@@ -3733,6 +3774,14 @@ li.active,
   .grid-container .grid-item {padding: 0 5px;}
   .calendar-box {margin: -40px -15px 0 -14px;}
   #wrapper .calendar-box .ibox-content {padding: 0 10px;}
+  
+  /* Updated Styles Start */
+  
+  .progress-area small{margin: 0 0 3px;}
+  .opportunities .progress-area .progress{height: 5px;}
+  .opportunities .progress-area .progress-holder{padding: 0 0 10px;}
+  
+  /* Updated Styles End */
 }
 
 @media screen and (max-width: 1279px) {
@@ -3818,6 +3867,16 @@ li.active,
   .report-section .table tr .column4,
   .report-section .table.nps-table td,
   .report-section .table.nps-table th{padding: 13px 8px;}
+  
+  /* Updated Styles Start */
+  
+  .progress-area small{margin: 0 0 5px;}
+  .progress-area small em{font-size: 12px;}
+  .opportunities .progress-area .progress{height: 6px;}
+  .opportunities .progress-area .progress-holder{padding: 0 0 12px;}
+  #wrapper .same-height-parent .data-block .ibox-content.content-holder{padding: 10px;}
+  
+  /* Updated Styles End */
 }
 
 @media screen and (max-width: 1199px) {
@@ -3934,11 +3993,11 @@ li.active,
   .business-segment .tab-links li:first-child,
   .business-segment .tab-links li.item5,
   .business-segment .tab-links li:last-child {width: 11%;}
-  .patch-section .tab-links li {width: 25%;}
-  .patch-section .tab-links li:last-child {width: 20%;}
-  .patch-section .tab-links li:first-child {width: 30%;}
+  .patch-section.data-block .tab-links li {width: 25%;}
+  .patch-section.data-block .tab-links li:last-child {width: 20%;}
+  .patch-section.data-block .tab-links li:first-child {width: 30%;}
   .timeline-section .ibox-tools,
-  .data-block .ibox-tools,
+  .data-block.add .ibox-tools,
   .map-section .ibox-tools,
   .rating .ibox-tools {
     clear: none;
@@ -3946,7 +4005,7 @@ li.active,
     padding-top: 0;
     float: right;
   }
-  .data-block .tab-links,
+  .data-block.add .tab-links,
   .timeline-section .tab-links,
   .map-section .tab-links,
   .rating .tab-links {
@@ -3956,14 +4015,14 @@ li.active,
     margin: -15px -15px -8px 0;
     text-align: right;
   }
-  .data-block .tab-links li,
+  .data-block.add .tab-links li,
   .timeline-section .tab-links li,
   .map-section .tab-links li,
   .rating .tab-links li {
     width: inherit;
     min-width: 50px;
   }
-  .data-block .tab-links li .calender-outer,
+  .data-block.add .tab-links li .calender-outer,
   .timeline-section .tab-links li .calender-outer,
   .map-section .tab-links li .calender-outer,
   .rating .tab-links li .calender-outer {height: 48px;}
@@ -3986,6 +4045,12 @@ li.active,
   .content-inner{background: #fff;}
   .modal-1200 .table th .btn.btn-info,
   .modal-1200 .table th.item6 .btn.btn-info{font-size: 11px;}
+  
+  /* Updated Styles Start */
+    
+  .morris-content-outer .equal-inner .morris-content-holder{width: 50%;}
+  
+  /* Updated Styles End */
 }
 
 @media screen and (max-width: 767px) {
@@ -4235,6 +4300,11 @@ li.active,
   .mini-navbar .tab-links li a{padding: 10px 2px;}
   .mini-navbar .tab-links li a i{font-size: 11px;}
   #wrapper .middle-box{font-size: 12px;}
+  /* Updated Styles Start */
+    
+  .morris-content-outer .equal-inner .morris-content-holder{width: 100%;}
+  
+  /* Updated Styles End */
 }
 
 @media print{
