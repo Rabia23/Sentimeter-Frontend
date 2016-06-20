@@ -31,20 +31,17 @@
           </div>
         </div>
       </div>
-      <div class="row same-height-parent">
-        <div class="col-lg-6 data-block patch-section">
-            <ui-view name="regional_analysis"></ui-view>
-        </div>
-        <div class="col-lg-6 data-block add">
-          <ui-view name="recommendation_likeness"></ui-view>
+      <div class="row">
+        <div class="col-xs-12 patch-section">
+          <ui-view name="regional_analysis"></ui-view>
         </div>
       </div>
       <div class="row same-height-parent">
-        <div class="col-lg-6 map-section">
-          <ui-view name="feedback_map"></ui-view>
+        <div class="col-lg-6 data-block timeline-section">
+            <ui-view name="overall_rating"></ui-view>
         </div>
-        <div class="col-lg-6 timeline-section">
-          <ui-view name="overall_rating"></ui-view>
+        <div class="col-lg-6 data-block add">
+          <ui-view name="recommendation_likeness"></ui-view>
         </div>
       </div>
     </div>
