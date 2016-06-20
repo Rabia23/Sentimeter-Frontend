@@ -12,10 +12,12 @@
     $scope.area_view = true;
     $scope.regional_view = false;
     $scope.city_view = false;
+    $scope.branch_view = false;
 
     $scope.area_link = false;
     $scope.region_link = false;
     $scope.city_link = false;
+    $scope.branch_link = false;
 
     $scope.radioModel = 'QSC';
 
@@ -125,6 +127,7 @@
       $scope.area_link = user_role == 4 ? false : true;
       $scope.region_link = false;
       $scope.city_link = false;
+      $scope.branch_link = false;
       $scope.show_loading = true;
       $scope.donut_regions_data = [];
       var type_id;
@@ -165,6 +168,7 @@
       $scope.area_link = user_role == 4 ? false : true;
       $scope.region_link = true;
       $scope.city_link = false;
+      $scope.branch_link = false;
       $scope.show_loading = true;
       $scope.donut_cities_data = [];
       if($scope.radioModel === 'Complaints'){
@@ -199,9 +203,11 @@
       $scope.area_view = false;
       $scope.regional_view = false;
       $scope.city_view = false;
+      $scope.branch_view = true;
       $scope.area_link = user_role == 4 || user_role == 3 ? false : true;
       $scope.region_link = user_role == 3 ? false : true;
       $scope.city_link = user_role == 3 ? false : true;
+      $scope.branch_link = false;
       $scope.show_loading = true;
       $scope.donut_branches_data = [];
       var type_id;
@@ -224,6 +230,48 @@
           if(data.success) {
             showString(data.response.count);
             $scope.donut_branches_data = regionalAnalysisChartService.getDonutChartData(data.response, $scope.question_type);
+            $scope.show_loading = false;
+          }
+          else{
+            flashService.createFlash(data.message, "danger");
+          }
+        });
+      }
+    }
+
+    function getBranchTables(branch){
+      $scope.question_type = ($scope.radioModel === 'Rating') ? 1 : 2;
+      $scope.selected_branch = branch;
+      $scope.area_view = false;
+      $scope.regional_view = false;
+      $scope.city_view = false;
+      $scope.branch_view = false;
+      $scope.area_link = user_role == 4 || user_role == 3 ? false : true;
+      $scope.region_link = user_role == 3 ? false : true;
+      $scope.city_link = user_role == 3 ? false : true;
+      $scope.branch_link = true;
+      $scope.show_loading = true;
+      $scope.donut_branches_data = [];
+      var type_id;
+      if($scope.radioModel === 'Complaints'){
+//        type_id = user_role == 3 ? "" : 3;
+//        Graphs.action_analysis(type_id, "", city.id, start_date, end_date, "").$promise.then(function(complains_data){
+//          if(complains_data.success) {
+//            showString(complains_data.response.count);
+//            $scope.donut_branches_data = regionalAnalysisChartService.getComplaintsDonutChartData(complains_data.response);
+//            $scope.show_loading = false;
+//          }
+//          else{
+//            flashService.createFlash(complains_data.message, "danger");
+//          }
+//        });
+      }
+      else {
+        type_id = 4;
+        Graphs.table_analysis(branch.id, $scope.question_type, start_date, end_date, type_id).$promise.then(function (data) {
+          if(data.success) {
+            showString(data.response.count);
+            $scope.donut_tables_data = regionalAnalysisChartService.getDonutChartData(data.response, $scope.question_type, type_id);
             $scope.show_loading = false;
           }
           else{
@@ -271,6 +319,20 @@
       $scope.showChart(region, 'cities');
     };
 
+    $scope.backToBranches = function(city){
+
+      $scope.selected_branch = null;
+      $scope.city_view = false;
+      $scope.regional_view = false;
+      $scope.branch_view = true;
+      $scope.area_link = user_role == 4 ? false : true;
+      $scope.region_link = true;
+      $scope.city_link = true;
+      $scope.branch_link = false;
+      $scope.donut_tables_data = [];
+      $scope.showChart(city, 'branches');
+    };
+
     function showTitle(radioModel){
       if(radioModel === 'Rating'){
         $scope.title = 'Feedback Analysis';
@@ -284,33 +346,39 @@
     }
 
     $scope.showChart = function(object_id, string){
-        showTitle($scope.radioModel);
-        $scope.object_id = object_id;
-        $scope.string = string;
+      showTitle($scope.radioModel);
+      $scope.object_id = object_id;
+      $scope.string = string;
 
-        if(string === 'areas'){
-          if($scope.area_view) {
-            getAreas();
-          }
-          else if($scope.regional_view){
-            getAreaRegions($scope.selected_area);
-          }
-          else if($scope.city_view){
-            getRegionCities($scope.selected_region);
-          }
-          else{
-            getCityBranches($scope.selected_city);
-          }
+      if(string === 'areas'){
+        if($scope.area_view) {
+          getAreas();
         }
-        else if(string === 'regions'){
-          getAreaRegions(object_id);
+        else if($scope.regional_view){
+          getAreaRegions($scope.selected_area);
         }
-        else if(string === 'cities'){
-          getRegionCities(object_id);
+        else if($scope.city_view){
+          getRegionCities($scope.selected_region);
+        }
+        else if($scope.branch_view){
+          getCityBranches($scope.selected_city);
         }
         else{
-          getCityBranches(object_id);
+          getBranchTables($scope.selected_branch);
         }
+      }
+      else if(string === 'regions'){
+        getAreaRegions(object_id);
+      }
+      else if(string === 'cities'){
+        getRegionCities(object_id);
+      }
+      else if(string === 'branches'){
+        getCityBranches(object_id);
+      }
+      else{
+        getBranchTables(object_id);
+      }
 
     };
     if(user_role == 4){
