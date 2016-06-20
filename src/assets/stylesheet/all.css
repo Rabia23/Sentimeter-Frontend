@@ -119,36 +119,11 @@ html body.errorpage {background: #eee;}
   height: 100%;
   min-height: 100%;
 }
-/* updated start*/
-
-#wrapper .same-height-parent .data-block .ibox-content.content-holder{
-  padding-top: 0;
-  padding-bottom: 0;
+#wrapper .data-block .content-holder{
   border-top: 1px solid #e7eaec;
   display: block;
 }
-.equal-inner{
-  display: table;
-  table-layout: fixed;
-  width: 100%;
-  height: 100%;
-}
-.equal-inner .breadcrum-holder{
-  display: table-header-group;
-  height: 1%;
-  width: 100%;
-}
-.equal-inner .breadcrum-holder .breadcrum{padding: 0;}
-.morris-content-outer .equal-inner .morris-content-holder{width: 33.33%;}
-.equal-inner .regional-container{
-  display: table-cell;
-  vertical-align: middle;
-  width: 100%;
-}
-
-/* updated end*/
-#wrapper .data-block .content-holder{border-top: 1px solid #e7eaec;}
-#wrapper .data-block.add .ibox-content:after{
+#wrapper .data-block .ibox-content:after{
   display: inline-block;
   vertical-align: middle;
   content: "";
@@ -156,7 +131,7 @@ html body.errorpage {background: #eee;}
   width: 0;
   min-height: 100%;
 }
-#wrapper .data-block .ibox-content > *{
+#wrapper .data-block.add .ibox-content > *{
   display: inline-block;
   vertical-align: middle;
   white-space: normal;
@@ -3997,7 +3972,7 @@ li.active,
   .patch-section.data-block .tab-links li:last-child {width: 20%;}
   .patch-section.data-block .tab-links li:first-child {width: 30%;}
   .timeline-section .ibox-tools,
-  .data-block.add .ibox-tools,
+  .data-block .ibox-tools,
   .map-section .ibox-tools,
   .rating .ibox-tools {
     clear: none;
@@ -4005,7 +3980,7 @@ li.active,
     padding-top: 0;
     float: right;
   }
-  .data-block.add .tab-links,
+  .data-block .tab-links,
   .timeline-section .tab-links,
   .map-section .tab-links,
   .rating .tab-links {
@@ -4015,14 +3990,14 @@ li.active,
     margin: -15px -15px -8px 0;
     text-align: right;
   }
-  .data-block.add .tab-links li,
+  .data-block .tab-links li,
   .timeline-section .tab-links li,
   .map-section .tab-links li,
   .rating .tab-links li {
     width: inherit;
     min-width: 50px;
   }
-  .data-block.add .tab-links li .calender-outer,
+  .data-block .tab-links li .calender-outer,
   .timeline-section .tab-links li .calender-outer,
   .map-section .tab-links li .calender-outer,
   .rating .tab-links li .calender-outer {height: 48px;}

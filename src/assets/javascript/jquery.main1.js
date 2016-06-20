@@ -561,13 +561,13 @@ function initSameHeight() {
     biggestHeight: true,
     useMinHeight: true
   });
-  jQuery('.same-height-parent').sameHeight({
-    elements: '.map-section .ibox-content , .timeline-section .ibox-content',
-    flexible: true,
-    multiLine: true,
-    biggestHeight: true,
-    useMinHeight: false
-  });
+//  jQuery('.same-height-parent').sameHeight({
+//    elements: '.map-section .ibox-content , .timeline-section .ibox-content',
+//    flexible: true,
+//    multiLine: true,
+//    biggestHeight: true,
+//    useMinHeight: false
+//  });
   jQuery('.grids-holder').sameHeight({
     elements: '.grid-item .data-container',
     flexible: true,

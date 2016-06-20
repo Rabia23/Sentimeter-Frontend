@@ -62,7 +62,11 @@
                     <a href="tel:{{comment.phone_no}}" class="tel">{{comment.phone_no}}</a>
                     <span class="email-holder">{{comment.email}}</span>
                   </td>
-                  <td class="item3">{{comment.data.branch}}</td>
+                  <td class="item3">
+                    {{comment.data.branch}}
+                    </br>
+                    Table: {{comment.data.table.option__text}}
+                  </td>
                   <td class="item4">{{comment.data.segment}}</td>
                   <td class="item5">
                     <div class="text">

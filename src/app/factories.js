@@ -126,6 +126,14 @@ angular.module( 'factories', [
     type_id = type_id || "";
     return this.service.feedback_analysis({type: type_id, date_from: start_date, date_to: end_date, city: city_id, question_type: question_type});
   };
+  Graphs.prototype.table_analysis = function(branch_id, question_type, start_date, end_date, type_id){
+    question_type = question_type || 1;
+    branch_id = branch_id || "";
+    start_date = start_date || "";
+    end_date = end_date || "";
+    type_id = type_id || "";
+    return this.service.feedback_analysis({type: type_id, date_from: start_date, date_to: end_date, branch: branch_id, question_type: question_type});
+  };
   Graphs.prototype.comments = function(page, branch_id, status_id){
     page = page || 1;
     status_id = status_id || "";

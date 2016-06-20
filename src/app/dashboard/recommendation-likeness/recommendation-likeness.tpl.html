@@ -29,9 +29,7 @@
               </ul>
               <div class="progress hidden-print" nps-progress-bar-background data-data="recommendation_likeness_data">
                 <uib-progress>
-                  <uib-bar ng-repeat="bar in recommendation_likeness_data track by $index" value="bar.percentage">
-                    <span>{{bar.percentage}}%</span>
-                  </uib-bar>
+                  <uib-bar ng-repeat="bar in recommendation_likeness_data track by $index" value="bar.percentage"><span>{{bar.percentage}}%</span></uib-bar>
                 </uib-progress>
               </div>
             </div>
@@ -40,7 +38,7 @@
         <div class="content-block">
           <div class="ibox-content">
             <div class="data-inner" recommendation-likeness data-data="recommendation_likeness_data">
-              <div ng-hide="feedback_count==0" id="barchartdiv" style="width: 100%; height: 320px" ></div>
+              <div ng-hide="feedback_count==0" id="barchartdiv" style="width: 100%; height: 320px"></div>
               <div ng-show="feedback_count==0" class="message-holder">
                 <h2>No Data Available</h2>
               </div>

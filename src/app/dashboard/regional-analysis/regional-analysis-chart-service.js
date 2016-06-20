@@ -3,11 +3,11 @@ angular.module('livefeed.regional_analysis.chart', []
 .service('regionalAnalysisChartService', function(Global, PatchStatusEnum){
   return {
 
-    getDonutChartData: function(graph_data, question_type){
+    getDonutChartData: function(graph_data, question_type, type_id){
       return {
         objects: _.map(graph_data.analysis,  function(data){
           return {
-            name: data.object.name, id: data.object.id, show_chart: data.data.feedback_count === 0 ? false : true
+            name: type_id==4 ? data.object.text : data.object.name, id: data.object.id, show_chart: data.data.feedback_count === 0 ? false : true
           };
         }),
         donutData: _.map(graph_data.analysis,  function(data){
