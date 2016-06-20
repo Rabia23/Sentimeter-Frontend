@@ -43,13 +43,13 @@
             <span ng-show="area_link == false && region_link == true && city_link == true">
               <a ng-click = "backToCities(selected_region)" style = "cursor:pointer;">{{selected_region.name}}</a>
             </span>
-            <span ng-show="area_link == false && region_link == true && city_link == true && branch_link == true">
+            <span ng-show="radioModel !== 'Complaints' && area_link == false && region_link == true && city_link == true && branch_link == true">
               <a ng-click = "backToBranches(selected_city)" style = "cursor:pointer;">&nbsp;/{{selected_city.name}}</a>
             </span>
-            <span ng-show="area_link == true && region_link == true && city_link == true && branch_link == true">
+            <span ng-show="radioModel !== 'Complaints' && area_link == true && region_link == true && city_link == true && branch_link == true">
               <a ng-click = "backToBranches(selected_city)" style = "cursor:pointer;">&nbsp;/{{selected_city.name}}</a>
             </span>
-            <span ng-show="area_link == false && region_link == false && city_link == false && branch_link == true">
+            <span ng-show="radioModel !== 'Complaints' && area_link == false && region_link == false && city_link == false && branch_link == true">
               <a ng-click = "backToBranches(selected_city)" style = "cursor:pointer;">Branch</a>
             </span>
           </div>
@@ -94,7 +94,8 @@
                     <div ng-hide="branch.show_chart">No data available</div>
                   </div>
                 </div>
-                <strong class="title"><a ng-click = "showChart(branch, 'tables')" style = "cursor:pointer;">{{branch.name}}</a></strong>
+                <strong class="title" ng-if="radioModel !== 'Complaints'"><a ng-click = "showChart(branch, 'tables')" style = "cursor:pointer;">{{branch.name}}</a></strong>
+                <strong class="title" ng-if="radioModel == 'Complaints'">{{branch.name}}</strong>
               </div>
               <div ng-show="show_string && area_view == false && regional_view == false && city_view == false && branch_view == true">No branch available</div>
               <div class="morris-content-holder" ng-repeat="table in donut_tables_data.objects track by $index" ng-show="area_view == false && regional_view == false && city_view == false && branch_view == false">

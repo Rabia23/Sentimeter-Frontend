@@ -254,23 +254,14 @@
       $scope.donut_branches_data = [];
       var type_id;
       if($scope.radioModel === 'Complaints'){
-//        type_id = user_role == 3 ? "" : 3;
-//        Graphs.action_analysis(type_id, "", city.id, start_date, end_date, "").$promise.then(function(complains_data){
-//          if(complains_data.success) {
-//            showString(complains_data.response.count);
-//            $scope.donut_branches_data = regionalAnalysisChartService.getComplaintsDonutChartData(complains_data.response);
-//            $scope.show_loading = false;
-//          }
-//          else{
-//            flashService.createFlash(complains_data.message, "danger");
-//          }
-//        });
+
       }
       else {
         type_id = 4;
         Graphs.table_analysis(branch.id, $scope.question_type, start_date, end_date, type_id).$promise.then(function (data) {
           if(data.success) {
             showString(data.response.count);
+            $scope.donut_tables_data = [];
             $scope.donut_tables_data = regionalAnalysisChartService.getDonutChartData(data.response, $scope.question_type, type_id);
             $scope.show_loading = false;
           }
