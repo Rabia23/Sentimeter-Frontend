@@ -251,17 +251,17 @@
       $scope.city_link = user_role == 3 ? false : true;
       $scope.branch_link = true;
       $scope.show_loading = true;
-      $scope.donut_branches_data = [];
+      $scope.donut_tables_data = [];
       var type_id;
       if($scope.radioModel === 'Complaints'){
-
+        $scope.show_loading = false;
+        $scope.show_string = true;
       }
       else {
         type_id = 4;
         Graphs.table_analysis(branch.id, $scope.question_type, start_date, end_date, type_id).$promise.then(function (data) {
           if(data.success) {
             showString(data.response.count);
-            $scope.donut_tables_data = [];
             $scope.donut_tables_data = regionalAnalysisChartService.getDonutChartData(data.response, $scope.question_type, type_id);
             $scope.show_loading = false;
           }
