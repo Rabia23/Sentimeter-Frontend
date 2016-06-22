@@ -5,8 +5,7 @@ angular.module('livefeed.api_links', [])
   return {
 
     link: {
-      api: "https://stagingapiginsoy.sentimeter.io/api/:endpoint",
-      //api: "http://172.16.11.113:8000/api/:endpoint/",
+      api: "https://apiginsoy.sentimeter.io/api/:endpoint",
       analytics: function(){
         //return $window.ga('create', 'UA-75485796-1', 'none');
       },
