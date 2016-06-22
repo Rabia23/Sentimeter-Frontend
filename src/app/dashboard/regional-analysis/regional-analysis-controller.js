@@ -329,7 +329,7 @@
         $scope.title = 'Feedback Analysis';
       }
       else if(radioModel === 'QSC'){
-        $scope.title = 'QSC Analysis';
+        $scope.title = 'KIPs Analysis';
       }
       else if(radioModel === 'Complaints'){
         $scope.title = 'Complaint Analysis';
