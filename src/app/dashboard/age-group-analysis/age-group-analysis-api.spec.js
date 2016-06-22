@@ -1,7 +1,7 @@
 describe('ageGroupAnalysisApi', function(){
 
   var AgeAnalysisApi, $httpBackend, $rootScope;
-  var apilink = 'https://stagingapimcdonalds.sentimeter.io/api/customer_analysis?branch=&city=&date_from=&date_to=&region=';
+  var apilink = 'https://stagingapiginsoy.sentimeter.io/api/customer_analysis?branch=&city=&date_from=&date_to=&region=';
 
   beforeEach(module('livefeed.dashboard.age_group_analysis.api'));
 
