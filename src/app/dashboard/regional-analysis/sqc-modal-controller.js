@@ -26,7 +26,7 @@
 
     function showGraph(area, region, city, branch, option) {
       $scope.show_loading = true;
-      Graphs.feedback_analysis_breakdown(area.id,region.id,city.id,branch.id,option.id,start_date,end_date).$promise.then(function(data) {
+      Graphs.feedback_analysis_breakdown("",region.id,city.id,branch.id,option.id,start_date,end_date).$promise.then(function(data) {
         if(data.success) {
           $scope.show_div = data.response.feedback_count === 0 ? true : false;
           $scope.donut_subgraph_data = regionalAnalysisChartService.getSubDonutChartData(data.response, option.label);
@@ -91,7 +91,7 @@
         area_id = area.id;
       }
       onOptionSelect(area, region, null, null, region);
-      Graphs.regional_analysis($scope.question_type,"","",area_id,type_id).$promise.then(function(data) {
+      Graphs.regional_analysis($scope.question_type,"","",type_id,area_id).$promise.then(function(data) {
         if(data.success) {
           $scope.show_error_message = false;
           $scope.sqc_data = getSQCdata(data.response);

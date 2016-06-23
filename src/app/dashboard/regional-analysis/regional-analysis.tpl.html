@@ -4,13 +4,13 @@
     <div class="ibox-tools">
       <ul class="tab-links">
         <li ng-class="{active: radioModel == 'Complaints'}">
-          <a ng-model="radioModel" uib-btn-radio="'Complaints'" ng-click="showChart(null, 'areas')" ng-disabled="show_loading">Complaints</a>
+          <a ng-model="radioModel" uib-btn-radio="'Complaints'" ng-click="showChart(null, 'regions')" ng-disabled="show_loading">Complaints</a>
         </li>
         <li ng-class="{active: radioModel == 'Rating'}">
-          <a ng-model="radioModel" uib-btn-radio="'Rating'" ng-click="showChart(null, 'areas')" ng-disabled="show_loading">Rating</a>
+          <a ng-model="radioModel" uib-btn-radio="'Rating'" ng-click="showChart(null, 'regions')" ng-disabled="show_loading">Rating</a>
         </li>
         <li ng-class="{active: radioModel == 'QSC'}">
-          <a ng-model="radioModel" uib-btn-radio="'QSC'" ng-click="showChart(null, 'areas')" ng-disabled="show_loading">KIPs</a>
+          <a ng-model="radioModel" uib-btn-radio="'QSC'" ng-click="showChart(null, 'regions')" ng-disabled="show_loading">KIPs</a>
         </li>
         <li class="item5">
           <div class="calender-outer">
@@ -26,28 +26,16 @@
   <div class="ibox-content morris-content-outer">
     <div class="breadcrum-holder">
       <div class="breadcrum">
-        <span ng-show="area_link == true">
-          <a ng-click = "backToAreas()" style = "cursor:pointer">Area&nbsp;/</a>
-        </span>
-        <span ng-show="area_link == true && region_link == true">
-          <a ng-click = "backToRegions(selected_area)" style = "cursor:pointer">{{selected_area.name}}&nbsp;/</a>
-        </span>
-        <span ng-show="area_link == false && region_link == true">
+        <span ng-show="region_link == true">
           <a ng-click = "backToRegions(selected_area)" style = "cursor:pointer"> Region&nbsp;/</a>
         </span>
-        <span ng-show="area_link == true && region_link == true && city_link == true">
+        <span ng-show="region_link == true && city_link == true">
           <a ng-click = "backToCities(selected_region)" style = "cursor:pointer;">{{selected_region.name}}</a>
         </span>
-        <span ng-show="area_link == false && region_link == true && city_link == true">
-          <a ng-click = "backToCities(selected_region)" style = "cursor:pointer;">{{selected_region.name}}</a>
-        </span>
-        <span ng-show="radioModel !== 'Complaints' && area_link == false && region_link == true && city_link == true && branch_link == true">
+        <span ng-show="radioModel !== 'Complaints' && region_link == true && city_link == true && branch_link == true">
           <a ng-click = "backToBranches(selected_city)" style = "cursor:pointer;">&nbsp;/{{selected_city.name}}</a>
         </span>
-        <span ng-show="radioModel !== 'Complaints' && area_link == true && region_link == true && city_link == true && branch_link == true">
-          <a ng-click = "backToBranches(selected_city)" style = "cursor:pointer;">&nbsp;/{{selected_city.name}}</a>
-        </span>
-        <span ng-show="radioModel !== 'Complaints' && area_link == false && region_link == false && city_link == false && branch_link == true">
+        <span ng-show="region_link == false && city_link == false && branch_link == true">
           <a ng-click = "backToBranches(selected_city)" style = "cursor:pointer;">Branch</a>
         </span>
       </div>
@@ -55,17 +43,7 @@
     <div class="regional-container">
       <div class="regional-holder" ng-class="{qsc: radioModel == 'QSC'}">
         <div class="regional-frame">
-          <div class="morris-content-holder" ng-repeat="area in donut_graph_data.objects track by $index" ng-show="area_view == true">
-            <div class="morris-graph-holder" same-region-height data-data="donut_graph_data.donutData[$index]">
-              <div class="morris-holder">
-                <div ng-show="area.show_chart" morris-chart data-data="donut_graph_data.donutData[$index]" data-type="donut" data-options="donut_graph_data.donutOptions[$index]" data-action="open(option,area,region,city,branch)" style="height: 200px;"></div>
-                <div ng-hide="area.show_chart">No data available</div>
-              </div>
-            </div>
-            <strong class="title"><a ng-click = "showChart(area, 'regions')" style = "cursor:pointer;">{{area.name}}</a></strong>
-          </div>
-          <div ng-show="show_string && area_view == true">No area available</div>
-          <div class="morris-content-holder" ng-repeat="region in donut_regions_data.objects track by $index" ng-show="area_view == false && regional_view == true">
+          <div class="morris-content-holder" ng-repeat="region in donut_regions_data.objects track by $index" ng-show="regional_view == true">
             <div class="morris-graph-holder" same-region-height data-data="donut_regions_data.donutData[$index]">
               <div class="morris-holder">
                 <div ng-show="region.show_chart" morris-chart data-data="donut_regions_data.donutData[$index]" data-type="donut" data-options="donut_regions_data.donutOptions[$index]" data-action="open(option,selected_area,region,city,branch)" style="height: 200px;"></div>
@@ -74,7 +52,7 @@
             </div>
             <strong class="title"><a ng-click = "showChart(region, 'cities')" style = "cursor:pointer;">{{region.name}}</a></strong>
           </div>
-          <div ng-show="show_string && area_view == false && regional_view == true">No region available</div>
+          <div ng-show="show_string && regional_view == true">No region available</div>
           <div class="morris-content-holder" ng-repeat="city in donut_cities_data.objects track by $index" ng-show="area_view == false && regional_view == false && city_view == true">
             <div class="morris-graph-holder" same-city-height data-data="donut_cities_data.donutData[$index]">
               <div class="morris-holder">
@@ -84,7 +62,7 @@
             </div>
             <strong class="title"><a ng-click = "showChart(city, 'branches')" style = "cursor:pointer;">{{city.name}}</a></strong>
           </div>
-          <div ng-show="show_string && area_view == false && regional_view == false && city_view == true">No city available</div>
+          <div ng-show="show_string && regional_view == false && city_view == true">No city available</div>
           <div class="morris-content-holder" ng-repeat="branch in donut_branches_data.objects track by $index" ng-show="area_view == false && regional_view == false && city_view == false && branch_view == true">
             <div class="morris-graph-holder" same-branch-height data-data="donut_branches_data.donutData[$index]">
               <div class="morris-holder">
@@ -95,7 +73,7 @@
             <strong class="title" ng-if="radioModel !== 'Complaints'"><a ng-click = "showChart(branch, 'tables')" style = "cursor:pointer;">{{branch.name}}</a></strong>
             <strong class="title" ng-if="radioModel == 'Complaints'">{{branch.name}}</strong>
           </div>
-          <div ng-show="show_string && area_view == false && regional_view == false && city_view == false && branch_view == true">No branch available</div>
+          <div ng-show="show_string && regional_view == false && city_view == false && branch_view == true">No branch available</div>
           <div class="morris-content-holder" ng-repeat="table in donut_tables_data.objects track by $index" ng-show="area_view == false && regional_view == false && city_view == false && branch_view == false">
             <div class="morris-graph-holder" same-branch-height data-data="donut_tables_data.donutData[$index]">
               <div class="morris-holder">
@@ -105,7 +83,7 @@
             </div>
             <strong class="title">{{table.name}}</strong>
           </div>
-          <div ng-show="show_string && area_view == false && regional_view == false && city_view == false && branch_view == false">No table available</div>
+          <div ng-show="show_string && regional_view == false && city_view == false && branch_view == false">No table available</div>
         </div>
       </div>
     </div>
