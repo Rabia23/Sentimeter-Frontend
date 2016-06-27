@@ -1509,6 +1509,8 @@ textarea.form-control{
   height: auto;
 }
 #wrapper .navbar-top-links li a {padding: 20px 5px;}
+#wrapper .navbar-top-links li a,
+#wrapper .navbar-top-links li .text-muted{color: #000;}
 #wrapper .wrapper-content {padding: 40px 10px 0;}
 .jcf-select {
   display: inline-block;
