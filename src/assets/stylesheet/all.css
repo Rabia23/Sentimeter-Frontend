@@ -3283,7 +3283,7 @@ li.active,
 .DTTT_Print #wrapper .navbar-static-side{
   width: 70px;
   left: -70px;
-  background: #f1c40f;
+  background: #fed75f;
 }
 .DTTT_Print.mini-navbar #wrapper #page-wrapper{margin:0 0 0 70px;}
 .DTTT_Print #wrapper .navbar-default .nav li a span{display: none;}
