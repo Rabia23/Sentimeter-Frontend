@@ -399,6 +399,7 @@ html body.errorpage {background: #eee;}
   width: 100%;
   height: 100%;
   white-space: nowrap;
+  padding: 0 5px;
 }
 .logo-holder .logo img {
   display: inline-block;
@@ -2128,7 +2129,7 @@ body > .jcf-select-drop.jcf-drop-flipped {margin: 1px 0 0;}
 .promotions .btn.dim:hover,
 .promotions .btn.dim:active,
 .promotions .btn.dim:focus {
-  color: #be1011;
+  color: #ed1c24;
   -webkit-transition: all 0.5s linear;
   -moz-transition: all 0.5s linear;
   -o-transition: all 0.5s linear;
