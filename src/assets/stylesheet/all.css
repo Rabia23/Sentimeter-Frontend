@@ -1,5 +1,5 @@
 html body {
-  background: #fed75f;
+  background: #ee3324;
   min-width: 320px;
   -ms-overflow-style: scrollbar;
 }
@@ -158,7 +158,7 @@ html body.errorpage {background: #eee;}
   background: rgba(255, 255, 255, 0.8);
   border-radius: 0;
   -webkit-border-radius: 0;
-  border-bottom: 2px solid #fed75f;
+  border-bottom: 2px solid #ee3324;
 }
 #wrapper .nav-second-level li a {
   padding-top: 14px;
@@ -171,8 +171,8 @@ html body.errorpage {background: #eee;}
   padding-left: 45px;
 }
 .navbar.dashboard .navbar-minimalize {
-  background: #ed1c24;
-  border-color: #ed1c24;
+  background: #ee3324;
+  border-color: #ee3324;
 }
 .navbar.dashboard .navbar-minimalize:hover,
 .navbar.dashboard .navbar-minimalize:active,
@@ -208,12 +208,13 @@ html body.errorpage {background: #eee;}
 }
 #wrapper #side-menu .jcf-scrollbar-vertical {pointer-events: none;}
 #wrapper .sidebar-collapse .nav > li > a {
-  color: #000;
+  color: #fff;
   font-size: 15px;
   position: relative;
   z-index: 1;
   border-bottom: 1px solid rgba(255, 255, 255, 0.3);
 }
+#wrapper.add .sidebar-collapse .nav > li > a{color: #000;}
 #wrapper .sidebar-collapse .nav > li > a:before {
   position: absolute;
   left: 0;
@@ -231,6 +232,12 @@ html body.errorpage {background: #eee;}
 #wrapper .sidebar-collapse .nav > li > a:hover,
 #wrapper .sidebar-collapse .nav > li > a:active,
 #wrapper .sidebar-collapse .nav > li > a:focus {
+  color: #fff;
+  background: none;
+}
+#wrapper.add .sidebar-collapse .nav > li > a:hover,
+#wrapper.add .sidebar-collapse .nav > li > a:active,
+#wrapper.add .sidebar-collapse .nav > li > a:focus {
   color: #000;
   background: none;
 }
@@ -247,7 +254,8 @@ html body.errorpage {background: #eee;}
   background: none;
 }
 #wrapper .doc-block .sidebar-collapse .metismenu > li > a {font-size: 17px;}
-#wrapper .sidebar-collapse .nav > li.active > a {color: #000;}
+#wrapper .sidebar-collapse .nav > li.active > a {color: #fff;}
+#wrapper.add .sidebar-collapse .nav > li.active > a {color: #000;}
 #wrapper .sidebar-collapse .nav > li.active > a:before {
   width: 100%;
   -moz-transition: all 600ms cubic-bezier(0.77, 0, 0.175, 1);
@@ -484,7 +492,7 @@ html body.errorpage {background: #eee;}
 .comment-block > .nav-opener {
   pointer-events: auto;
   float: right;
-  background: #fed75f;
+  background: #ee3324;
   color: #fff;
   margin-top: 0;
   padding: 8px 10px;
@@ -501,7 +509,7 @@ html body.errorpage {background: #eee;}
   -webkit-transition: all 600ms cubic-bezier(0.77, 0, 0.175, 1);
   transition: all 600ms cubic-bezier(0.77, 0, 0.175, 1);
 }
-.comment-block > .nav-opener:hover {background: #fdd24d;}
+.comment-block > .nav-opener:hover {background: #e61b23;}
 .comment-block > .nav-opener .count {
   position: absolute;
   right: 5px;
@@ -611,7 +619,7 @@ html body.errorpage {background: #eee;}
   cursor: default;
   font-size: 100px;
   line-height: 100px;
-  color: #fed75f;
+  color: #ee3324;
 }
 .comments-drop h2 {
   margin: 0 0 10px;
@@ -2129,7 +2137,7 @@ body > .jcf-select-drop.jcf-drop-flipped {margin: 1px 0 0;}
 .promotions .btn.dim:hover,
 .promotions .btn.dim:active,
 .promotions .btn.dim:focus {
-  color: #ed1c24;
+  color: #ee3324;
   -webkit-transition: all 0.5s linear;
   -moz-transition: all 0.5s linear;
   -o-transition: all 0.5s linear;
@@ -2416,7 +2424,7 @@ li.active,
   white-space: nowrap;
   color: #fff;
   z-index: 991;
-  background: #fed75f;
+  background: #ee3324;
   -webkit-box-shadow: 0 6px 13px rgba(0, 0, 0, .36);
   -moz-box-shadow: 0 6px 13px rgba(0, 0, 0, .36);
   box-shadow: 0 6px 13px rgba(0, 0, 0, .36);
@@ -2426,7 +2434,7 @@ li.active,
   bottom: 70px;
 }
 .add-user:hover {
-  background: #fdd24d;
+  background: #e61b23;
   color: #fff;
 }
 .add-user:before {
@@ -2763,7 +2771,7 @@ li.active,
   white-space: nowrap;
   color: #fff;
   z-index: 991;
-  background: #fed75f;
+  background: #ee3324;
   -webkit-box-shadow: 0 6px 13px rgba(0, 0, 0, .36);
   -moz-box-shadow: 0 6px 13px rgba(0, 0, 0, .36);
   box-shadow: 0 6px 13px rgba(0, 0, 0, .36);
@@ -2781,7 +2789,7 @@ li.active,
   padding: 5px;
 }
 #wrapper .doc-block .navbar-static-side a.btn-top:hover {
-  background: #fdd24d;
+  background: #e61b23;
   color: #fff;
 }
 #wrapper .doc-block .navbar-static-side a.btn-top:after {display: none;}
@@ -3284,7 +3292,7 @@ li.active,
 .DTTT_Print #wrapper .navbar-static-side{
   width: 70px;
   left: -70px;
-  background: #fed75f;
+  background: #ee3324;
 }
 .DTTT_Print.mini-navbar #wrapper #page-wrapper{margin:0 0 0 70px;}
 .DTTT_Print #wrapper .navbar-default .nav li a span{display: none;}
