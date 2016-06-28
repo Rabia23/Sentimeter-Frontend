@@ -52,23 +52,23 @@
   font-size: 15px;
   font-weight: bold;
   line-height: 1.5em;
-  color: #927510;
-  text-shadow: 0 1px rgba(255, 255, 255, .75);
+  color: #fff;
+  text-shadow: rgba(0,0,0,0.42) 1px 1px 2px;
   margin: 0 0 15px;
-  border-color: #e1d84c;
-  background: #ffeb7e;
-  background: -moz-linear-gradient(top, #ffeb7e 0%, #fde976 23%, #f5e056 80%, #f3de4f 100%);
-  background: -webkit-linear-gradient(top, #ffeb7e 0%, #fde976 23%, #f5e056 80%, #f3de4f 100%);
-  background: linear-gradient(to bottom, #ffeb7e 0%, #fde976 23%, #f5e056 80%, #f3de4f 100%);
+  border-color: #fff;
+  background: #f24a16;
+  background: -moz-linear-gradient(top, #f24a16 0%, #5f2310 100%);
+  background: -webkit-linear-gradient(top, #f24a16 0%,#5f2310 100%);
+  background: linear-gradient(to bottom, #f24a16 0%,#5f2310 100%);
 }
 .form-holder .btn.btn-info:hover,
 .form-holder .btn.btn-info:active,
 .form-holder .btn.btn-info:focus {
-  color: #927510;
-  background: #f3de4f;
-  background: -moz-linear-gradient(top, #f3de4f 0%, #f5e056 20%, #fde976 77%, #ffeb7e 100%);
-  background: -webkit-linear-gradient(top, #f3de4f 0%, #f5e056 20%, #fde976 77%, #ffeb7e 100%);
-  background: linear-gradient(to bottom, #f3de4f 0%, #f5e056 20%, #fde976 77%, #ffeb7e 100%);
+  color: #fff;
+  background: #f24a16;
+  background: -moz-linear-gradient(top, #f24a16 0%, #a3301b 100%); 
+  background: -webkit-linear-gradient(top, #f24a16 0%,#a3301b 100%); 
+  background: linear-gradient(to bottom, #f24a16 0%,#a3301b 100%);
 }
 .form-holder label {
   float: left;
@@ -107,8 +107,8 @@
 }
 .form-holder [type="checkbox"]:checked + .fake-input:before {opacity: 1;}
 .form-holder [type="checkbox"]:checked + .fake-input {
-  background: #f8e035;
-  border-color: #f8e035;
+  background: #f24a16;
+  border-color: #f24a16;
 }
 .form-holder input:disabled + .fake-input,
 .form-holder input:disabled ~ .fake-label {opacity: .5;}
