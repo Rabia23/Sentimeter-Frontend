@@ -40,7 +40,12 @@
             $scope.showChart("", "regions");
           }
           else if(user_role == 3){
-            $scope.showChart("");
+            if($scope.branch_view){
+              $scope.showChart("", "branches");
+            }
+            else{
+              $scope.showChart($scope.object_id, $scope.string);
+            }
           }
           else{
             $scope.showChart($scope.object_id, $scope.string);
@@ -205,6 +210,7 @@
       $scope.city_view = false;
       $scope.region_link = false;
       $scope.city_link = false;
+      $scope.branch_link = false;
       $scope.donut_cities_data = [];
       $scope.showChart(null, 'regions');
     };
@@ -216,6 +222,7 @@
       $scope.regional_view = false;
       $scope.region_link = true;
       $scope.city_link = false;
+      $scope.branch_link = false;
       $scope.donut_branches_data = [];
       $scope.showChart(region, 'cities');
     };
@@ -226,8 +233,8 @@
       $scope.city_view = false;
       $scope.regional_view = false;
       $scope.branch_view = true;
-      $scope.region_link = true;
-      $scope.city_link = true;
+      $scope.region_link = user_role == 3 ? false : true;
+      $scope.city_link = user_role == 3 ? false : true;
       $scope.branch_link = false;
       $scope.donut_tables_data = [];
       $scope.showChart(city, 'branches');
