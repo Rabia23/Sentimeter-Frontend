@@ -238,7 +238,7 @@
         $scope.title = 'Feedback Analysis';
       }
       else if(radioModel === 'QSC'){
-        $scope.title = 'KIPs Analysis';
+        $scope.title = 'KIP Analysis';
       }
       else if(radioModel === 'Complaints'){
         $scope.title = 'Complaint Analysis';
