@@ -16,7 +16,7 @@ html body.errorpage {background: #eee;}
   display: inline-block;
   vertical-align: top;
   letter-spacing: 0;
-  width: 20%;
+  width: 25%;
   padding: 0 5px;
   text-align: center;
 }
@@ -220,6 +220,7 @@ html body.errorpage {background: #eee;}
   z-index: 1;
   border-bottom: 1px solid rgba(255, 255, 255, 0.3);
 }
+#wrapper.add .sidebar-collapse .nav > li > a{color: #000;}
 #wrapper .sidebar-collapse .nav > li > a:before {
   position: absolute;
   left: 0;
@@ -242,6 +243,9 @@ html body.errorpage {background: #eee;}
   color: #fff;
   background: none;
 }
+#wrapper.add .sidebar-collapse .nav > li > a:hover,
+#wrapper.add .sidebar-collapse .nav > li > a:active,
+#wrapper.add .sidebar-collapse .nav > li > a:focus {color: #000;}
 #wrapper .sidebar-collapse .nav > li > a:hover:before,
 #wrapper .sidebar-collapse .nav > li > a:active:before {
   width: 100%;
@@ -258,6 +262,7 @@ html body.errorpage {background: #eee;}
 }
 #wrapper .doc-block .sidebar-collapse .metismenu > li > a {font-size: 17px;}
 #wrapper .sidebar-collapse .nav > li.active > a {color: #fff;}
+#wrapper.add .sidebar-collapse .nav > li.active > a {color: #000;}
 #wrapper .sidebar-collapse .nav > li.active > a:before {
   width: 100%;
   -webkit-transition: all 0.4s linear;
@@ -2580,6 +2585,7 @@ li.active,
   text-align: center;
   margin: 10px 0 20px;
 }
+/*
 .doc-header:after {
   position: absolute;
   left: 0;
@@ -2602,6 +2608,7 @@ li.active,
   background: #f1c40f;
   z-index: 2;
 }
+*/
 .doc-header .logo-holder {
   max-width: 150px;
   margin: 0 auto;
@@ -2794,7 +2801,7 @@ li.active,
   white-space: nowrap;
   color: #fff;
   z-index: 991;
-  background: #ecc41d;
+  background: #f7931d;
   -webkit-box-shadow: 0 6px 13px rgba(0, 0, 0, .36);
   -moz-box-shadow: 0 6px 13px rgba(0, 0, 0, .36);
   box-shadow: 0 6px 13px rgba(0, 0, 0, .36);
@@ -2812,7 +2819,7 @@ li.active,
   padding: 5px;
 }
 #wrapper .doc-block .navbar-static-side a.btn-top:hover {
-  background: #f1cf41;
+  background: #fe9800;
   color: #fff;
 }
 #wrapper .doc-block .navbar-static-side a.btn-top:after {display: none;}

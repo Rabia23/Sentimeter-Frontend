@@ -96,19 +96,13 @@ angular.module( 'factories', [
   Graphs.prototype.area = function(){
     return this.service.area_analysis();
   };
-  Graphs.prototype.area_analysis = function(question_type, start_date, end_date){
+  Graphs.prototype.regional_analysis = function(question_type, start_date, end_date, type_id, area_id){
     question_type = question_type || 1;
-    start_date = start_date || "";
-    end_date = end_date || "";
-    return this.service.feedback_analysis({question_type: question_type, date_from: start_date, date_to: end_date});
-  };
-  Graphs.prototype.regional_analysis = function(question_type, start_date, end_date, area_id, type_id){
-    question_type = question_type || 1;
-    area_id = area_id || "";
     start_date = start_date || "";
     end_date = end_date || "";
     type_id = type_id || "";
-    return this.service.feedback_analysis({type: type_id, question_type: question_type, area: area_id, date_from: start_date, date_to: end_date});
+    area_id = area_id || "";
+    return this.service.feedback_analysis({type: type_id, area: area_id, question_type: question_type, date_from: start_date, date_to: end_date});
   };
   Graphs.prototype.city_analysis = function(region_id, question_type, start_date, end_date, type_id){
     question_type = question_type || 1;

@@ -1,7 +1,7 @@
 describe('LiveCtrl', function(){
 
   var $rootScope, controller, WebSocket, $timeout, $httpBackend, Clock;
-  var apiLink = 'https://stagingapimcdonalds.sentimeter.io/api/livedashboard';
+  var apiLink = 'https://stagingapiginsoy.sentimeter.io/api/livedashboard';
 
   beforeEach(module('livefeed.live'));
   beforeEach(module('helper_factories'));
