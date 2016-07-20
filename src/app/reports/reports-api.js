@@ -11,7 +11,7 @@
     function ReportsApi() {
       this.service = $resource(apiLinks.link.api, {},
       {
-        report: {method: "GET", isArray: false, params: {endpoint: "report"}}
+        report: {method: "GET", isArray: false, params: {endpoint: "report/"}}
       });
     }
 
