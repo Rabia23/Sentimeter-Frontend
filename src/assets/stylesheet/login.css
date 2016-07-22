@@ -52,23 +52,17 @@
   font-size: 15px;
   font-weight: bold;
   line-height: 1.5em;
-  color: #927510;
-  text-shadow: 0 1px rgba(255, 255, 255, .75);
+  color: #fff;
+  text-shadow: 0 1px rgba(0, 0, 0, .15);
   margin: 0 0 15px;
-  border-color: #e1d84c;
-  background: #ffeb7e;
-  background: -moz-linear-gradient(top, #ffeb7e 0%, #fde976 23%, #f5e056 80%, #f3de4f 100%);
-  background: -webkit-linear-gradient(top, #ffeb7e 0%, #fde976 23%, #f5e056 80%, #f3de4f 100%);
-  background: linear-gradient(to bottom, #ffeb7e 0%, #fde976 23%, #f5e056 80%, #f3de4f 100%);
+  border-color: #76960f;
+  background: #8cb114;
 }
 .form-holder .btn.btn-info:hover,
 .form-holder .btn.btn-info:active,
 .form-holder .btn.btn-info:focus {
-  color: #927510;
-  background: #f3de4f;
-  background: -moz-linear-gradient(top, #f3de4f 0%, #f5e056 20%, #fde976 77%, #ffeb7e 100%);
-  background: -webkit-linear-gradient(top, #f3de4f 0%, #f5e056 20%, #fde976 77%, #ffeb7e 100%);
-  background: linear-gradient(to bottom, #f3de4f 0%, #f5e056 20%, #fde976 77%, #ffeb7e 100%);
+  color: #fff;
+  background: #76960f;
 }
 .form-holder label {
   float: left;
@@ -107,8 +101,8 @@
 }
 .form-holder [type="checkbox"]:checked + .fake-input:before {opacity: 1;}
 .form-holder [type="checkbox"]:checked + .fake-input {
-  background: #f8e035;
-  border-color: #f8e035;
+  background: #8cb114;
+  border-color: #8cb114;
 }
 .form-holder input:disabled + .fake-input,
 .form-holder input:disabled ~ .fake-label {opacity: .5;}
