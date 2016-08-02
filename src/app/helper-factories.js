@@ -5,14 +5,14 @@ angular.module( 'helper_factories', [])
   return {
 
     liveQscClass: {
-      "Cleanliness": "item3",
-      "Quality": "",
+      "Food": "item3",
+      "Ambiance": "",
       "Service": "item2"
     },
 
     liveQscPriority: {
-      "Cleanliness": 3,
-      "Quality": 1,
+      "Food": 3,
+      "Ambiance": 1,
       "Service": 2
     },
 
