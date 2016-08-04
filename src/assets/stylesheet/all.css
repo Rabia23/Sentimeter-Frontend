@@ -803,7 +803,7 @@ html body.errorpage {background: #eee;}
 .tab-links li.active a,
 .tab-links li:focus a {
   border-bottom-color: #fff;
-  color: #000;
+  color: #8cb114;
 }
 .tab-links li.item6:hover a,
 .tab-links li.item6:active a,
@@ -811,7 +811,7 @@ html body.errorpage {background: #eee;}
 .tab-links li.item6:focus a {border-bottom-color: #e7eaec;}
 .calender-outer:hover .fa-calendar,
 .calender-outer:active .fa-calendar,
-.calender-outer:focus .fa-calendar {color: #000;}
+.calender-outer:focus .fa-calendar {color: #8cb114;}
 #header {
   overflow: hidden;
   text-align: center;
