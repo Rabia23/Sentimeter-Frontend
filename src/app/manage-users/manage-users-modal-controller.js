@@ -142,6 +142,8 @@
       }
       else{
         $scope.submitted = true;
+        var message = "Something went wrong.. Please try again!";
+        flashService.createFlash(message, "danger");
       }
     };
 
