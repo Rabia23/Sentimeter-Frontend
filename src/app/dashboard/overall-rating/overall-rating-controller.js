@@ -122,7 +122,7 @@
       $scope.option_object = option_object;
       vm.option_id = option_object.item.dataContext[option_object.graph.id];
       vm.date = option_object.item.category;
-      if(vm.option_id !== undefined) {
+      if($scope.mainView) {
         $scope.show_loading = true;
 
         Graphs.feedback_segmentation(vm.date, vm.option_id).$promise.then(function (data) {
