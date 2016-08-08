@@ -140,7 +140,13 @@
               }
             });
             $timeout(function(){
-              window.initSameHeight();
+              jQuery('.same-height-parent').sameHeight({
+                elements: '.data-block .equal-height, .timeline-section .ibox-content',
+                flexible: true,
+                multiLine: true,
+                biggestHeight: true,
+                useMinHeight: false
+              });
             },200);
             chart.addListener("clickGraphItem", function(event){
               scope.$apply(scope.action({option_object: event}));

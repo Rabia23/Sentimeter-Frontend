@@ -61,7 +61,7 @@
             });
             $timeout(function(){
               jQuery('.same-height-parent').sameHeight({
-                elements: '.data-block .equal-height',
+                elements: '.data-block .equal-height, .timeline-section .ibox-content',
                 flexible: true,
                 multiLine: true,
                 biggestHeight: true,

@@ -561,13 +561,6 @@ function initSameHeight() {
     biggestHeight: true,
     useMinHeight: true
   });
-  jQuery('.same-height-parent').sameHeight({
-    elements: '.data-block .equal-height , .timeline-section .ibox-content',
-    flexible: true,
-    multiLine: true,
-    biggestHeight: true,
-    useMinHeight: false
-  });
   jQuery('.grids-holder').sameHeight({
     elements: '.grid-item .data-container',
     flexible: true,

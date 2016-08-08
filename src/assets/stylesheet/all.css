@@ -19,6 +19,7 @@ html body.errorpage {background: #eee;}
   width: 20%;
   padding: 0 5px;
   text-align: center;
+  position: relative;
 }
 .morris-block-holder .morris-graph-holder .morris-holder {padding: 0 3px;}
 .morris-block-holder .morris-graph-holder .morris-holder .chart-container {
@@ -80,6 +81,29 @@ html body.errorpage {background: #eee;}
   width: 16.6667%;
   padding: 0 10px;
   text-align: center;
+  position: relative;
+}
+.morris-content-outer .morris-content-holder:after{
+  position: absolute;
+  right: -8px;
+  top: 50%;
+  content: '';
+  font-size: 15px;
+  line-height: 15px;
+  width: 15px;
+  height: 15px;
+  margin-top: -10px;
+  color: #676a6c;
+}
+.morris-content-outer .morris-content-holder.south:after{
+  content: '+';
+  -webkit-box-shadow: 0 0 2px 1px rgba(0,0,0,0.3);
+  box-shadow: 0 0 2px 1px rgba(0,0,0,0.3);
+}
+.morris-content-outer .morris-content-holder.north:after{
+  content: '=';
+  -webkit-box-shadow: 0 0 2px 1px rgba(0,0,0,0.3);
+  box-shadow: 0 0 2px 1px rgba(0,0,0,0.3);
 }
 .ibox.detail-block .stat-percent.font-bold.text-navy {color: #3498db;}
 .ibox.detail-block .label.label-primary {
@@ -3905,10 +3929,7 @@ li.active,
   .same-height-block .inner-row.add > .col-sm-6,
   .same-height-block .inner-row.add > .col-xs-12 {padding-bottom: 0;}
   .modal-1200 {width: 745px;}
-  .morris-content-outer .morris-content-holder {
-    width: 33.33%;
-    padding: 0 5px;
-  }
+  .morris-content-outer .morris-content-holder {width: 33.33%;}
   .tab-links {
     border-top: 1px solid #e7eaec;
     clear: both;
@@ -4175,6 +4196,13 @@ li.active,
   .modal .modal-dialog.modal-1200{padding: 15px 0;}
   .modal .modal-dialog .modal-content{margin: 15px 0;}
   .doc-active #wrapper.add #footer{left: 170px;}
+  .morris-content-outer .morris-content-holder.north:after{
+    right: auto;
+    left: -8px;
+    top: 100%;
+    margin-top: 15px;
+  }
+  .morris-content-outer .morris-content-holder.pakistan{margin-top: 35px;}
 }
 
 @media screen and (max-width: 768px) {
@@ -4234,6 +4262,16 @@ li.active,
   .mini-navbar .tab-links li a{padding: 10px 2px;}
   .mini-navbar .tab-links li a i{font-size: 11px;}
   #wrapper .middle-box{font-size: 12px;}
+  .morris-content-outer .morris-content-holder.south:after,
+  .morris-content-outer .morris-content-holder.north:after{
+    right: auto;
+    left: 50%;
+    top: 100%;
+    margin-left: -8px;
+    margin-top: 15px;
+  }
+  .morris-content-outer .morris-content-holder.north,
+  .morris-content-outer .morris-content-holder.pakistan{margin-top: 35px;}
 }
 
 @media print{
