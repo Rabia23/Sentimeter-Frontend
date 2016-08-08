@@ -562,7 +562,7 @@ function initSameHeight() {
     useMinHeight: true
   });
   jQuery('.same-height-parent').sameHeight({
-    elements: '.map-section .ibox-content , .timeline-section .ibox-content',
+    elements: '.data-block .equal-height , .timeline-section .ibox-content',
     flexible: true,
     multiLine: true,
     biggestHeight: true,

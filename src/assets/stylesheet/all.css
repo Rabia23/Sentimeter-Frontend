@@ -803,7 +803,7 @@ html body.errorpage {background: #eee;}
 .tab-links li.active a,
 .tab-links li:focus a {
   border-bottom-color: #fff;
-  color: #76960f;
+  color: #006400;
 }
 .tab-links li.item6:hover a,
 .tab-links li.item6:active a,
@@ -811,7 +811,7 @@ html body.errorpage {background: #eee;}
 .tab-links li.item6:focus a {border-bottom-color: #e7eaec;}
 .calender-outer:hover .fa-calendar,
 .calender-outer:active .fa-calendar,
-.calender-outer:focus .fa-calendar {color: #76960f;}
+.calender-outer:focus .fa-calendar {color: #006400;}
 #header {
   overflow: hidden;
   text-align: center;
@@ -2225,11 +2225,12 @@ body > .jcf-select-drop.jcf-drop-flipped {margin: 1px 0 0;}
 .nav-header,
 li.active,
 #page-wrapper,
-.footer {
-  -webkit-transition: all 0.5s;
-  -moz-transition: all 0.5s;
-  -o-transition: all 0.5s;
-  transition: all 0.5s;
+.footer,
+#wrapper .sidebar-collapse{
+  -moz-transition: all 0.3s linear;
+  -o-transition: all 0.3s linear;
+  -webkit-transition: all 0.3s linear;
+  transition: all 0.3s linear;
 }
 .modal-backdrop {
   background-color: #fff;
@@ -3842,7 +3843,6 @@ li.active,
   .row.inner-row.add .title-outer {border-bottom: 1px solid #e7eaec;}
   .row.inner-row.add .content-holder {padding: 10px;}
   .row.inner-row.add .detail-block .content-holder {padding: 0;}
-  #wrapper .welcome-message {display: block;}
   #wrapper .row.inner-row.add .content-holder .chart-box {
     padding: 0;
     border: 0;
