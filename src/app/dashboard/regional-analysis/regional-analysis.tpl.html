@@ -44,7 +44,7 @@
     </div>
     <div class="regional-holder" ng-class="{qsc: radioModel == 'QSC'}">
       <div class="regional-frame">
-        <div class="morris-content-holder" ng-class="{'north': (area_view == true), 'south': (area_view == true), 'pakistan': (area_view == true)}" ng-repeat="area in donut_graph_data.objects track by $index" ng-show="area_view == true">
+        <div class="morris-content-holder" ng-class="{'{{area.name | lowercase}}': (area_view == true)}" ng-repeat="area in donut_graph_data.objects track by $index" ng-show="area_view == true">
           <div class="morris-graph-holder" same-region-height data-data="donut_graph_data.donutData[$index]">
             <div class="morris-holder">
               <div ng-show="area.show_chart" morris-chart data-data="donut_graph_data.donutData[$index]" data-type="donut" data-options="donut_graph_data.donutOptions[$index]" data-action="open(option,area,region,city,branch)" style="height: 200px;"></div>
