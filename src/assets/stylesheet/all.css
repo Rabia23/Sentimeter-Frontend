@@ -803,7 +803,7 @@ html body.errorpage {background: #eee;}
 .tab-links li.active a,
 .tab-links li:focus a {
   border-bottom-color: #fff;
-  color: #8cb114;
+  color: #76960f;
 }
 .tab-links li.item6:hover a,
 .tab-links li.item6:active a,
@@ -811,7 +811,7 @@ html body.errorpage {background: #eee;}
 .tab-links li.item6:focus a {border-bottom-color: #e7eaec;}
 .calender-outer:hover .fa-calendar,
 .calender-outer:active .fa-calendar,
-.calender-outer:focus .fa-calendar {color: #8cb114;}
+.calender-outer:focus .fa-calendar {color: #76960f;}
 #header {
   overflow: hidden;
   text-align: center;
@@ -1749,7 +1749,7 @@ body > .jcf-select-drop.jcf-drop-flipped {margin: 1px 0 0;}
 .progress-area small em {
   display: block;
   font-style: normal;
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 600;
   line-height: 1.1;
   text-transform: uppercase;
@@ -1760,7 +1760,7 @@ body > .jcf-select-drop.jcf-drop-flipped {margin: 1px 0 0;}
 .progress-area small b {
   font-weight: 400;
   color: #6e6e75;
-  font-size: 11px;
+  font-size: 10px;
   display: inline-block;
   vertical-align: bottom;
   margin: 0 0 0 5px;
@@ -1848,7 +1848,7 @@ body > .jcf-select-drop.jcf-drop-flipped {margin: 1px 0 0;}
   height: 100%;
 }
 .business-segment .progress-area .progress-holder .progress-inner {
-  padding: 20px 0 15px;
+  padding: 14px 0 15px;
   position: relative;
 }
 .business-segment .progress-area .progress-holder .progress-block .progress {
