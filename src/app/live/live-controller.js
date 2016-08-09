@@ -65,6 +65,7 @@
     $rootScope.$on('web-socket-message', function (event, data) {
 
       var dat = JSON.parse(data);
+      console.log(dat);
       $scope.top_ranking = dat.top_rankings;
       $scope.overall_ratings = dat.overall_rating;
       $scope.complaint_view = dat.complaint_view;
