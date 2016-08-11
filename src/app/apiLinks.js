@@ -10,7 +10,7 @@ angular.module('livefeed.api_links', [])
       analytics: function(){
         //return $window.ga('create', 'UA-75485796-1', 'none');
       },
-      socket: "wss://stagingmcdonalds.sentimeter.io:5679/"
+      socket: "wss://apikoel.sentimeter.io:5679/livekoel/"
     }
     // link: {
     //   api: "https://apimcdonalds.sentimeter.io/api/:endpoint",
