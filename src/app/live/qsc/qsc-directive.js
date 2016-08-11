@@ -161,6 +161,7 @@
               var width = $("#area-chart").find("svg").width();
               width = width + 20;
               $("#area-chart").find("svg").css("width", width);
+              graph_drawn = true;
             }
             else {
               live_sqc_chart.dataProvider = data;
