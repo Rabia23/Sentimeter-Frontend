@@ -22,27 +22,16 @@
                   </div>
                   <ul>
                     <li>
-                      <span class="title">Phone No :</span>
-                      <div class="text">{{user.phone_no}}</div>
-                    </li>
-                    <li ng-if="child_role == 2 || child_role == 3">
-                      <span class="title">Branch :</span>
-                      <div class="text" ng-show="user.branch">
-                        {{user.branch.name}}
-                      </div>
-                      <div class="text" ng-hide="user.branch">
-                        <a ng-click="edit(user, $index)">
-                        Add Branch
-                      </a>
-                      </div>
-                    </li>
-                    <li>
                       <span class="title">User Name :</span>
                       <div class="text">{{user.username}}</div>
                     </li>
                     <li>
                       <span class="title">Email :</span>
                       <div class="text">{{user.email}}</div>
+                    </li>
+                    <li>
+                      <span class="title">Phone No :</span>
+                      <div class="text">{{user.phone_no}}</div>
                     </li>
                     <li>
                       <span class="title">Status :</span>
@@ -59,6 +48,17 @@
                       </div>
                       <div class="text" ng-hide="user.region">
                         <a ng-click="edit(user, $index)"> Add Region </a>
+                      </div>
+                    </li>
+                    <li ng-if="child_role == 2 || child_role == 3">
+                      <span class="title">Branch :</span>
+                      <div class="text" ng-show="user.branch">
+                        {{user.branch.name}}
+                      </div>
+                      <div class="text" ng-hide="user.branch">
+                        <a ng-click="edit(user, $index)">
+                        Add Branch
+                      </a>
                       </div>
                     </li>
                   </ul>
