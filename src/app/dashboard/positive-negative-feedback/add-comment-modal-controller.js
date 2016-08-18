@@ -6,11 +6,12 @@
     $scope.show_loading = false;
     $scope.comment_text = "";
     $scope.add_comment = true;
-    $scope.disable_view_comment = true;
 
     function action_performed(){
+
       comment.show_dropdown = false;
       comment.action_string = status_id;
+      comment.disable_view_comment_link = true;
       var action_id = StatusEnum.get_index(status_id);
       Graphs.action_taken(comment.data.id,action_id,$scope.comment_text).$promise.then(function(data){
         if(data.success) {
@@ -20,7 +21,10 @@
           if(data.response.action_comment){
             var message = "Comment successfully added.";
             flashService.createFlash(message, "success");
-            $scope.disable_view_comment = false;
+            comment.disable_view_comment_link = false;
+          }
+          else{
+            comment.disable_view_comment_link = false;
           }
         }
         else {
