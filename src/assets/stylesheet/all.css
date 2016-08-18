@@ -1325,6 +1325,10 @@ textarea.form-control{
 .modal-1200 .table tbody td a:hover,
 .modal-1200 .table tbody td a:active,
 .modal-1200 .table tbody td a:focus {color: #000;}
+.modal-1200 .table tbody td.item6 a.disable{
+  pointer-events: none;
+  opacity: 0.6;
+ }
 .modal .modal-dialog.modal-1200 {
   margin: 0 auto;
   padding: 30px 0;
