@@ -6,6 +6,7 @@
     $scope.show_loading = false;
     $scope.comment_text = "";
     $scope.add_comment = true;
+    $scope.disable_view_comment = true
 
     function action_performed(){
       comment.show_dropdown = false;
@@ -19,6 +20,7 @@
           if(data.response.action_comment){
             var message = "Comment successfully added.";
             flashService.createFlash(message, "success");
+            $scope.disable_view_comment = false
           }
         }
         else {
