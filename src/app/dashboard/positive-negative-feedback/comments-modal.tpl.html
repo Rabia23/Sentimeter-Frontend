@@ -13,7 +13,7 @@
             <thead>
               <tr>
                 <th class="item1">Name</th>
-                <th class="item2">Phone / Email</th>
+                <th class="item2">Info</th>
                 <th class="item3">
                   <div class="btn-group" uib-dropdown>
                     <button id="dropdown-button" type="button" class="btn btn-info" uib-dropdown-toggle>
@@ -61,6 +61,7 @@
                   <td class="item2">
                     <a href="tel:{{comment.phone_no}}" class="tel">{{comment.phone_no}}</a>
                     <span class="email-holder">{{comment.email}}</span>
+                    <span>{{comment.dob | date:'MMMM d'}}</span>
                   </td>
                   <td class="item3">
                     {{comment.data.branch}}
