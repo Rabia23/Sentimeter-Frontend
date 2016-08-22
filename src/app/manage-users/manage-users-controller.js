@@ -17,6 +17,7 @@
     }
 
     ManageApi.manage_users().$promise.then(function(data){
+      console.log(data);
       $scope.show_loading = false;
       $scope.show_users = false;
       if(data.success){
@@ -36,8 +37,20 @@
         if(data.response.parent.region){
           $scope.region_id = data.response.parent.region.id;
         }
+        $scope.grpUsers = [];
+        var grpUsers = _.groupBy($scope.users, 'role');
+
+        Object.keys(grpUsers)
+        .sort()
+        .reverse()
+        .forEach(function(value, i) {
+          $scope.grpUsers.push({role: value, user_role: Enum.get_user_label(value), data: grpUsers[value]});
+        });
+        console.log($scope.grpUsers);
+
         _.each($scope.users, function(value, index){
           value.user_role = Enum.get_user_label(value.role);
+          console.log(value.user_role);
           if(value.is_active){
             value.status = "Active";
           }

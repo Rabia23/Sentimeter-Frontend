@@ -13,8 +13,9 @@
               <h2>No User Added</h2>
               <h4>Click on Add button to Add New User</h4>
             </div>
-            <ul class="users-list" data-users="users">
-              <li ng-repeat="user in users track by $index" ng-class="{'deactivate': user.is_active == false, 'inactive': user.is_active == false}">
+            <ul class="users-list" data-users="users" ng-repeat="role in grpUsers">
+               {{role.user_role}}
+              <li ng-repeat="user in role.data track by $index" ng-class="{'deactivate': user.is_active == false, 'inactive': user.is_active == false}">
                 <div class="ibox">
                   <div class="header">
                     <div class="img-holder"><img src="assets/images/person-img.png" alt=""></div>
