@@ -14,7 +14,7 @@
               <h4>Click on Add button to Add New User</h4>
             </div>
             <ul class="users-list" data-users="users" ng-repeat="role in grpUsers">
-               {{role.user_role}}
+              <div class="role-info"><h2>{{role.user_role}}</h2></div>
               <li ng-repeat="user in role.data track by $index" ng-class="{'deactivate': user.is_active == false, 'inactive': user.is_active == false}">
                 <div class="ibox">
                   <div class="header">

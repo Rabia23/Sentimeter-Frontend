@@ -2289,6 +2289,16 @@ li.active,
   list-style: none;
   margin: 0 -15px;
 }
+.users-list .role-info{
+  display: block;
+  overflow: hidden;
+  letter-spacing: 0;
+  padding: 0 10px 15px;
+}
+.users-list .role-info h2{
+  margin: 0;
+  font-weight: 700;
+}
 .users-list > li {
   padding: 0 10px 15px;
   display: inline-block;
@@ -3677,6 +3687,7 @@ li.active,
   .tab-links li a {padding: 13px 15px;}
   .calender-outer {min-width: 45px;}
   .users-list li .ibox {padding: 15px 10px 10px;}
+  .users-list .role-info{padding: 0 5px 10px;}
   .users-list > li {
     width: 25%;
     padding: 0 5px 10px;
