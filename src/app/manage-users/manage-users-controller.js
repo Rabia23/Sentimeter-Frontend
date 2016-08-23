@@ -17,14 +17,12 @@
     }
 
     ManageApi.manage_users().$promise.then(function(data){
-      console.log(data);
       $scope.show_loading = false;
       $scope.show_users = false;
       if(data.success){
         if(data.response.children.length === 0){
             $scope.show_users = true;
         }
-
         $scope.show_error_message = false;
         $scope.user_list = Enum.get_user_label(data.response.child_role) + "S";
         $rootScope.page_heading = $scope.user_list;
@@ -43,23 +41,20 @@
         Object.keys(grpUsers)
         .sort()
         .reverse()
-        .forEach(function(value, i) {
-          $scope.grpUsers.push({role: value, user_role: Enum.get_user_label(value), data: grpUsers[value]});
+        .forEach(function(val, i) {
+          _.each(grpUsers[val], function(value, index){
+            value.user_role = Enum.get_user_label(value.role);
+            if(value.is_active){
+              value.status = "Active";
+            }
+            else{
+              value.status = "Inactive";
+            }
+          });
+          grpUsers[val] = _.sortBy(grpUsers[val], function(item) { return item.is_active; });
+          grpUsers[val] = grpUsers[val].reverse();
+          $scope.grpUsers.push({role: val, user_role: Enum.get_user_label(val), data: grpUsers[val]});
         });
-        console.log($scope.grpUsers);
-
-        _.each($scope.users, function(value, index){
-          value.user_role = Enum.get_user_label(value.role);
-          console.log(value.user_role);
-          if(value.is_active){
-            value.status = "Active";
-          }
-          else{
-            value.status = "Inactive";
-          }
-        });
-        $scope.users = _.sortBy($scope.users, function(item) { return item.is_active; });
-        $scope.users = $scope.users.reverse();
       }
       else{
         flashService.createFlash(data.message, "danger");
@@ -71,15 +66,16 @@
     $scope.disassociate = function(user, index){
       ManageApi.disassociate(user.id).$promise.then(function(data){
         if(data.success){
+          var specific_role_data = _.find($scope.grpUsers, function(value){ return value.role == user.role; });
           user = data.response;
-          user.user_role = Enum.get_user_label(user.role);
           if(user.is_active){
             user.status = "Active";
           }
           else{
             user.status = "Inactive";
           }
-          $scope.users[index] = user;
+          specific_role_data.data[index] = user;
+          specific_role_data.data[index].user_role = Enum.get_user_label(user.role);
           message = "User successfully disassociated.";
           flashService.createFlash(message, "success");
         }
@@ -93,25 +89,25 @@
       ManageApi.delete_user(user.id).$promise.then(function(data){
         var message = "";
         if(data.success){
+          var specific_role_data = _.find($scope.grpUsers, function(value){ return value.role == user.role; });
           $scope.show_error_message = false;
           if(data.response.is_active === true) {
             message = "User successfully activated.";
             user = data.response;
             user.status = "Active";
-            $scope.users[index] = user;
-
+            specific_role_data.data[index] = user;
           }
           else {
             message = "User successfully deactivated.";
             user = data.response;
             user.status = "Inactive";
-            $scope.users[index] = user;
+            specific_role_data.data[index] = user;
           }
-          $scope.users[index].user_role = Enum.get_user_label(data.response.role);
+          specific_role_data.data[index].user_role = Enum.get_user_label(data.response.role);
           flashService.createFlash(message, "success");
           //Flash.dismiss(1);
-          $scope.users = _.sortBy($scope.users, function(item) { return item.is_active; });
-          $scope.users = $scope.users.reverse();
+          specific_role_data.data = _.sortBy(specific_role_data.data, function(item) { return item.is_active; });
+          specific_role_data.data = specific_role_data.data.reverse();
         }
 
         else{
@@ -203,21 +199,20 @@
 
           },
           user: function(){
-            user.parent_id = $scope.parent_id;
-            user.role = $scope.child_role;
             return user;
           }
         }
       });
 
       editInstance.result.then(function (edited_user) {
-        $scope.users[index] = edited_user;
-        $scope.users[index].user_role = Enum.get_user_label($scope.users[index].role);
-        if($scope.users[index].is_active === true) {
-          $scope.users[index].status = "Active";
+        var specific_role_data = _.find($scope.grpUsers, function(value){ return value.role == edited_user.role; });
+        specific_role_data.data[index] = edited_user;
+        specific_role_data.data[index].user_role = Enum.get_user_label(edited_user.role);
+        if(specific_role_data.data[index].is_active === true) {
+          specific_role_data.data[index].status = "Active";
         }
         else {
-          $scope.users[index].status = "Inactive";
+          specific_role_data.data[index].status = "Inactive";
         }
 
       });
