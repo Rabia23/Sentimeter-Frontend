@@ -70,8 +70,8 @@ angular.module( 'factories', [
     return this.service.action_taken({feedback_id: feedback_id, action_id: action_id, action_comment: action_comment});
   };
 
-  Graphs.prototype.top_concerns = function(){
-    return this.service.top_concerns();
+  Graphs.prototype.top_concerns = function(date_from, date_to){
+    return this.service.top_concerns({date_from: date_from, date_to: date_to});
   };
 
   Graphs.prototype.top_rankings = function(){

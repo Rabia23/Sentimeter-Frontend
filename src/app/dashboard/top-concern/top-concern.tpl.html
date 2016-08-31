@@ -4,14 +4,29 @@
       <div class="title-outer">
         <div class="ibox-title">
           <h5>Top Opportunities</h5>
+          <div class="ibox-tools">
+            <ul class="tab-links">
+              <li>
+                <div class="calender-outer">
+                  <span class="calendar-holder">
+                    <input date-range-picker id="daterange-map" readonly="readonly" name="daterange-map" class="date-picker" type="text" ng-model="date" max="today" options = "datePickerOption" readonly="true"/>
+                    <i class="fa fa-calendar" map-range-click></i>
+                  </span>
+                </div>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
-      <div class="content-holder" top-concerns data-data="::data" data-action="getConcernsString(text_string)">
-        <div class="ibox-content float-chart-block chart-box">
+      <div class="content-holder" top-concerns data-data="data" data-action="getConcernsString(text_string)">
+        <div class="ibox-content float-chart-block chart-box" ng-hide="show_text">
           <div id="piechart" style="width:100%; height:300px;" ng-hide="all_zero"></div>
           <div ng-show="all_zero" class="message-holder">
             <h2>No Data Available</h2>
           </div>
+        </div>
+        <div ng-show="show_text" class="message-holder">
+          <h2>Please select a date range to view Top Concerns</h2>
         </div>
       </div>
     </div>
