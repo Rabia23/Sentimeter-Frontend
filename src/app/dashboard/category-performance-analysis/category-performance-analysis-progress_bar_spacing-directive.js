@@ -15,7 +15,7 @@
         scope.$watch('data', function(watchedData) {
           if(watchedData !== undefined){
             if(first_time){
-              time = 4000;
+              time = 8000;
               first_time = false;
             }
             else{

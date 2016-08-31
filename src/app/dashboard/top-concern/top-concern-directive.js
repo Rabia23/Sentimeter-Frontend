@@ -10,6 +10,8 @@
       },
       link: function(scope, ele, attrs) {
         var chart;
+        window.initEqualHeight();
+
         scope.$watch('data', function(watchedData) {
           if(watchedData !== undefined){
             var data = scope.data;
@@ -41,17 +43,6 @@
                 "titles": [],
                 "dataProvider": data
               });
-
-              $timeout(function () {
-                jQuery('.same-height-parent').sameHeight({
-                  elements: '.same-height',
-                  flexible: true,
-                  multiLine: true,
-                  biggestHeight: true,
-                  useMinHeight: false
-                });
-              }, 2000);
-
 
               $timeout(function () {
                 window.initEqualHeight();
