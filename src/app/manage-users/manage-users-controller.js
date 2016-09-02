@@ -4,6 +4,9 @@
 
   .controller( 'ManageUsersCtrl', function ManageUsersCtrl( $scope, $state, $rootScope, Auth, TokenHandler, $uibModal, ManageApi, Enum, flashService) {
 
+    var vm = this;
+    vm.get_users_list = get_users_list;
+
     $scope.show_active_icon = false;
     $scope.show_deactive_icon = false;
 
@@ -36,25 +39,7 @@
           $scope.region_id = data.response.parent.region.id;
         }
         $scope.grpUsers = [];
-        var grpUsers = _.groupBy($scope.users, 'role');
-
-        Object.keys(grpUsers)
-        .sort()
-        .reverse()
-        .forEach(function(val, i) {
-          _.each(grpUsers[val], function(value, index){
-            value.user_role = Enum.get_user_label(value.role);
-            if(value.is_active){
-              value.status = "Active";
-            }
-            else{
-              value.status = "Inactive";
-            }
-          });
-          grpUsers[val] = _.sortBy(grpUsers[val], function(item) { return item.is_active; });
-          grpUsers[val] = grpUsers[val].reverse();
-          $scope.grpUsers.push({role: val, user_role: Enum.get_user_label(val), data: grpUsers[val]});
-        });
+        $scope.grpUsers = vm.get_users_list($scope.users);
       }
       else{
         flashService.createFlash(data.message, "danger");
@@ -146,17 +131,8 @@
           if(data.success){
             $scope.show_error_message = false;
             $scope.users = data.response.children;
-            _.each($scope.users, function(value, index){
-              value.user_role = Enum.get_user_label(value.role);
-              if(value.is_active){
-                value.status = "Active";
-              }
-              else{
-                value.status = "Inactive";
-              }
-            });
-            $scope.users = _.sortBy($scope.users, function(item) { return item.is_active; });
-            $scope.users = $scope.users.reverse();
+            $scope.grpUsers = [];
+            $scope.grpUsers = vm.get_users_list($scope.users);
           }
           else{
             $scope.show_error_message = true;
@@ -217,6 +193,30 @@
 
       });
     };
+
+    function get_users_list(users){
+      var groupUsers = [];
+      var grpUsers = _.groupBy(users, 'role');
+
+      Object.keys(grpUsers)
+      .sort()
+      .reverse()
+      .forEach(function(val, i) {
+        _.each(grpUsers[val], function(value, index){
+          value.user_role = Enum.get_user_label(value.role);
+          if(value.is_active){
+            value.status = "Active";
+          }
+          else{
+            value.status = "Inactive";
+          }
+        });
+        grpUsers[val] = _.sortBy(grpUsers[val], function(item) { return item.is_active; });
+        grpUsers[val] = grpUsers[val].reverse();
+        groupUsers.push({role: val, user_role: Enum.get_user_label(val), data: grpUsers[val]});
+      });
+      return groupUsers;
+    }
 
   });
 
