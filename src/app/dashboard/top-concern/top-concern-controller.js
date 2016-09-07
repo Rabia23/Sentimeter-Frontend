@@ -11,6 +11,7 @@
     vm.show_concerns = show_concerns;
 
     vm.resetDates();
+    vm.show_concerns();
 
     function resetDates(){
       $scope.date = {
