@@ -7,7 +7,7 @@
   function QuestionnaireDetailCtrl( $scope, $rootScope, QuestionnaireChartTypeEnum, flashService, $stateParams, QuestionnaireApi) {
 
     var inc = 1;
-    $scope.all_zero = true;
+    $scope.all_zero = false;
     $scope.show_loading = true;
     var questionnaireId = $stateParams.questionnaireId;
     
@@ -61,8 +61,8 @@
           $rootScope.page_heading = $scope.questionnaire.title;
           $scope.questions = data.response.analysis;
           _.each($scope.questions, function (question) {
-            if (question.total_count > 0) {
-              $scope.all_zero = false;
+            if (question.total_count === 0) {
+              $scope.all_zero = true;
             }
             if (question.type == QuestionnaireChartTypeEnum.get_bar_chart_value()) {
               var question_bar_chart = vm.getBarChartData(question.feedbacks, question.total_count);
