@@ -37,9 +37,13 @@
       $uibModalInstance.close();
     };
 
-    $scope.cancel = function () {
+    $scope.skip = function () {
       $scope.comment_text = "";
       action_performed();
+      $uibModalInstance.dismiss('cancel');
+    };
+
+    $scope.cancel = function () {
       $uibModalInstance.dismiss('cancel');
     };
 
