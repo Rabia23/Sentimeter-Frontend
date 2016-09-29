@@ -35,24 +35,14 @@
       function draw_map(start_date,end_date ){
         Graphs.map_view(start_date, end_date).$promise.then(function(data){
           if(data.success) {
-            $scope.markers = [];
-            _.each(data.response.branches, function (branch) {
-              var icon;
-              if (branch.count_exceeded === false) {
-                icon = '../assets/images/ico-locator.png';
-              }
-              else {
-                icon = '../assets/images/ico-locator2.png';
-              }
-              $scope.markers.push(mapService.createMarker(branch, $scope.map, icon));
-            });
+            $scope.map_data = [];
+            $scope.map_data = data.response.branches;
             $scope.show_loading = false;
           }
           else{
             flashService.createFlash(data.message, "danger");
           }
         });
-
       }
 
     });

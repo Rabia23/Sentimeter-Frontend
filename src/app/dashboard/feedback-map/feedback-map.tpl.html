@@ -15,9 +15,36 @@
     </div>
   </div>
   <div class="ibox-content" same-map-height>
-    <div id="world-map">
-      <div map-lazy-load="http://maps.google.com/maps/api/js">
-        <map center="30,70" zoom="{{zoom}}"></map>
+    <div class="table-holder map">
+      <div class="table-block jcf-scrollable" map-custom-form>
+        <div class="table-header-holder map">
+          <table class="table table-header">
+            <thead>
+              <tr>
+                <th class="item1">Name</th>
+                <th class="item2">Feedback Count</th>
+                <th class="item3">Benchmark Count</th>
+              </tr>
+            </thead>
+          </table>
+        </div>
+        <div class="content scroller">
+          <div class="table-container jcf-scrollable" data-data="map_data" map-custom-form>
+            <table class="table">
+              <tbody>
+                <tr ng-repeat="data in map_data" ng-class="{negative: !data.count_exceeded, positive: data.count_exceeded}">
+                  <td class="item1">{{data.name}}</td>
+                  <td class="item2">
+                    <span>{{data.feedback_count}}</span>
+                  </td>
+                  <td class="item3">
+                    <span>{{data.benchmark_count}}</span>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
       </div>
     </div>
   </div>
